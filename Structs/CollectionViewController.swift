@@ -27,7 +27,7 @@ class CollectionViewController: UICollectionViewController {
         
         title = "Courses"
         lessons.append(Lesson(n: "Stack", p: 0.9, d: "Easy", desc: "This data structure is used quite a lot in real life"))
-        lessons.append(Lesson(n: "Queues", p: 50.2, d: "Easy", desc: "This data structure is used quite a lot in real life"))
+        lessons.append(Lesson(n: "Queue", p: 0.2, d: "Easy", desc: "This data structure is used quite a lot in real life"))
 
         lessons.append(Lesson(n: "Linked List", p: 0.5, d: "Medium", desc: "This data structure is used quite a lot in real life"))
 
