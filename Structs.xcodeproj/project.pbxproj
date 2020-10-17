@@ -16,6 +16,8 @@
 		DA73A89A253B8BE300E9DD60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA73A898253B8BE300E9DD60 /* LaunchScreen.storyboard */; };
 		DA8A1B7D253B8DDF0077CF46 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B7C253B8DDF0077CF46 /* Lesson.swift */; };
 		DA8A1B7F253B94660077CF46 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B7E253B94660077CF46 /* LessonCell.swift */; };
+		DA8A1B81253BAB600077CF46 /* TopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B80253BAB600077CF46 /* TopicsTableViewController.swift */; };
+		DA8A1B83253BAE830077CF46 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B82253BAE830077CF46 /* TopicCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		DA73A89B253B8BE300E9DD60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8A1B7C253B8DDF0077CF46 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		DA8A1B7E253B94660077CF46 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
+		DA8A1B80253BAB600077CF46 /* TopicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTableViewController.swift; sourceTree = "<group>"; };
+		DA8A1B82253BAE830077CF46 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				DA73A88F253B8BDE00E9DD60 /* SceneDelegate.swift */,
 				DA73A891253B8BDE00E9DD60 /* ViewController.swift */,
 				DA73A893253B8BDE00E9DD60 /* Main.storyboard */,
+				DA8A1B82253BAE830077CF46 /* TopicCell.swift */,
+				DA8A1B80253BAB600077CF46 /* TopicsTableViewController.swift */,
 				DA8A1B7C253B8DDF0077CF46 /* Lesson.swift */,
 				DA499B49253B8D7500BBCB28 /* CollectionViewController.swift */,
 				DA8A1B7E253B94660077CF46 /* LessonCell.swift */,
@@ -148,11 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8A1B7D253B8DDF0077CF46 /* Lesson.swift in Sources */,
+				DA8A1B83253BAE830077CF46 /* TopicCell.swift in Sources */,
 				DA8A1B7F253B94660077CF46 /* LessonCell.swift in Sources */,
 				DA499B4A253B8D7500BBCB28 /* CollectionViewController.swift in Sources */,
 				DA73A892253B8BDE00E9DD60 /* ViewController.swift in Sources */,
 				DA73A88E253B8BDE00E9DD60 /* AppDelegate.swift in Sources */,
 				DA73A890253B8BDE00E9DD60 /* SceneDelegate.swift in Sources */,
+				DA8A1B81253BAB600077CF46 /* TopicsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
