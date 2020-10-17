@@ -14,7 +14,7 @@ class Helper {
     init() {
     }
     
-    func readJSONFilesGetFirstStruct() -> [Struct]! {
+    func readJSONFilesGetStructs() -> [Struct]! {
         do {
             guard let bundlePath = Bundle.main.path(forResource: "data", ofType: "json") else {return nil}
             guard let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) else {return nil}
