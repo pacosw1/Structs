@@ -15,7 +15,8 @@ struct Structs: Codable {
 
 // MARK: - Struct
 struct Struct: Codable {
-    let lesson: String
+    let lesson, description, level: String
+    let percentage: Float
     let completed, quizCompleted: Bool
     let topics: [Topic]
 }

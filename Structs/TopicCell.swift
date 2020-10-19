@@ -9,7 +9,8 @@
 import UIKit
 
 class TopicCell: UITableViewCell {
-
+    
+    
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Locked: UIImageView!
     

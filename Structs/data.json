@@ -2,6 +2,9 @@
     "structs": [
         {
             "lesson": "Pila",
+            "percentage": 0.2,
+            "description": "Una estructura muy cool",
+            "level": "Easy",
             "completed": false,
             "quizCompleted": false,
             "topics": [
@@ -196,6 +199,9 @@
         },
         {
             "lesson": "Fila",
+            "percentage": 0.0,
+            "description": "Una estructura muy cool",
+            "level": "Easy",
             "completed": false,
             "quizCompleted": false,
             "topics": [
@@ -205,6 +211,9 @@
         {
             "lesson": "Lista Encadenada",
             "completed": false,
+            "percentage": 0.0,
+            "description": "Una estructura muy cool",
+            "level": "Easy",
             "quizCompleted": false,
             "topics": [
 

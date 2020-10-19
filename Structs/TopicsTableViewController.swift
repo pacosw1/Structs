@@ -11,10 +11,15 @@ import UIKit
 class TopicsTableViewController: UITableViewController {
 
     
-    var Topics: Int [];
+    var DataStructure: String!
+    var Topics: [Topic]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        title = DataStructure
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,26 +37,40 @@ class TopicsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return Topics.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath) as! TopicCell
+        
+        
+        let topic = Topics[indexPath.row]
+        
+        
+        let isLocked: Bool
+        
+        cell.Name.text! = topic.name
+        
+        if indexPath.row == 0 { //first topic always unlocked
+            isLocked = false
+            return cell
+        }
+        
+        //next topic only unlocked if previous is completed
+        let pastTopic = Topics[indexPath.row-1]
+        isLocked = pastTopic.completed ? false: true
+        cell.Locked.image = UIImage(systemName: isLocked ? "lock.fill": "lock.open.fill")
 
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+    
+    
+
+
+
+
 
     /*
     // Override to support editing the table view.

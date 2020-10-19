@@ -14,23 +14,21 @@ class CollectionViewController: UICollectionViewController {
     
     
     
-    
+    @IBOutlet var lessonView: UICollectionView!
     
     
     var lessons: [Lesson] = []
+    
+    var dataLoader = Helper();
+    var structs: [Struct]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataLoader = Helper()
         
-        
-        
-        title = "Courses"
-        lessons.append(Lesson(n: "Stack", p: 0.9, d: "Easy", desc: "This data structure is used quite a lot in real life"))
-        lessons.append(Lesson(n: "Queue", p: 0.2, d: "Easy", desc: "This data structure is used quite a lot in real life"))
-
-        lessons.append(Lesson(n: "Linked List", p: 0.5, d: "Medium", desc: "This data structure is used quite a lot in real life"))
-
+        structs = dataLoader.readJSONFilesGetStructs()
+    
         
         
         
@@ -44,15 +42,24 @@ class CollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let topicView = segue.destination as! TopicsTableViewController
+        
+        let index = lessonView.indexPathsForSelectedItems?.first?.row
+        
+        let lesson = structs[index!]
+        topicView.DataStructure = lesson.lesson
+        
+        //send topics for this specific struct
+        topicView.Topics = structs[index!].topics
+        
+        
     }
-    */
+
 
     // MARK: UICollectionViewDataSource
 
@@ -60,8 +67,6 @@ class CollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
-    
     
     
     
@@ -74,7 +79,7 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return lessons.count
+        return structs.count
     }
     
     
@@ -85,13 +90,19 @@ class CollectionViewController: UICollectionViewController {
                
     
         
-        let lesson = lessons[indexPath.row]
-        cell.title.text! = lesson.Name
-        cell.difficulty.text! = lesson.Difficulty
-        cell.percentage.text = String("\(lesson.Progress * 100) Completed")
-        cell.progressBar.progress = lesson.Progress
-        cell.actionButton.titleLabel?.text = "Empezar"
+        let lesson = structs[indexPath.row]
+        cell.title.text! = lesson.lesson
+        cell.difficulty.text! = lesson.level
+        cell.desc.text! = lesson.description
+        cell.percentage.text = String("\(lesson.percentage * 100) % Completed")
+        cell.progressBar.progress = lesson.percentage
         
+        
+        
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.cornerRadius = 0.2
+        cell.layer.borderWidth = 1
+    
             
         
     
