@@ -1,9 +1,9 @@
 {
     "structs": [
         {
-            "lesson": "Pila",
+            "lesson": "LA PILA",
             "percentage": 0.2,
-            "description": "Una estructura muy cool",
+            "description": "Una de las estructuras mas divertidas y utiles que jamas aprenderas",
             "level": "Easy",
             "completed": false,
             "quizCompleted": false,
@@ -198,10 +198,10 @@
             ]
         },
         {
-            "lesson": "Fila",
+            "lesson": "LA FILA",
             "percentage": 0.0,
-            "description": "Una estructura muy cool",
-            "level": "Easy",
+            "description": "Seguro te gustara esta estructura porque aunque no lo creas ya tienes mucha experiencia usando esta estructura en tu vida cotidiana",
+            "level": "Medium",
             "completed": false,
             "quizCompleted": false,
             "topics": [
@@ -209,11 +209,11 @@
             ]
         },
         {
-            "lesson": "Lista Encadenada",
+            "lesson": "LA LISTA ENCADENADA",
             "completed": false,
             "percentage": 0.0,
-            "description": "Una estructura muy cool",
-            "level": "Easy",
+            "description": "Preparate para aprender uno de los temas mas dificiles de aprender para el estudiante novato, pero sin duda, con mucha utilidad.",
+            "level": "Hard",
             "quizCompleted": false,
             "topics": [
 

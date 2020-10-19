@@ -26,10 +26,12 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         dataLoader = Helper()
+        collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
         
         structs = dataLoader.readJSONFilesGetStructs()
     
-        
+        title = "Structs"
         
         
 
@@ -93,15 +95,25 @@ class CollectionViewController: UICollectionViewController {
         let lesson = structs[indexPath.row]
         cell.title.text! = lesson.lesson
         cell.difficulty.text! = lesson.level
+        
+        cell.difficulty.textColor = { () -> UIColor in
+            switch lesson.level {
+            case "Easy":
+                return UIColor.green
+            case "Medium":
+            return UIColor.orange
+            case "Hard":
+            return UIColor.red
+            default:
+                return UIColor.lightGray
+            }
+        }()
         cell.desc.text! = lesson.description
         cell.percentage.text = String("\(lesson.percentage * 100) % Completed")
         cell.progressBar.progress = lesson.percentage
         
         
-        
-        cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.cornerRadius = 0.2
-        cell.layer.borderWidth = 1
+       
     
             
         
