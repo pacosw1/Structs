@@ -11,6 +11,7 @@ import UIKit
 class TopicsTableViewController: UITableViewController {
 
     
+    @IBOutlet var table: UITableView!
     var DataStructure: String!
     var Topics: [Topic]!
     
@@ -99,14 +100,24 @@ class TopicsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        let FlashcardView = segue.destination as! FlashcardViewController
+        
+        
+        
+        
+        let topic = Topics[table.indexPathForSelectedRow!.row]
+        
+        FlashcardView.Flashcards = topic.flashcards
+        FlashcardView.TopicName = topic.name
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
