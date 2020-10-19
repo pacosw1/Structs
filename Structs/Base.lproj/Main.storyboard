@@ -157,7 +157,7 @@
                                 <connections>
                                     <outlet property="Locked" destination="Ggq-IN-jcE" id="erH-67-QiE"/>
                                     <outlet property="Name" destination="NjZ-9K-Zpy" id="U6V-dj-uhm"/>
-                                    <segue destination="Zcu-yo-dpo" kind="show" id="gWv-hh-XUV"/>
+                                    <segue destination="Zcu-yo-dpo" kind="show" identifier="Flashcard" id="gWv-hh-XUV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

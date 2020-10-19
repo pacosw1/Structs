@@ -18,9 +18,48 @@ class FlashcardViewController: UIViewController {
         super.viewDidLoad()
 
         title = TopicName
+        setupPageControls()
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    func setupPageControls() {
+        
+        let PrevSection = UIView()
+        PrevSection.backgroundColor = .red
+        
+        
+        let NextSection = UIView()
+        NextSection.backgroundColor = .green
+
+        let IndicatorSection = UIView()
+        IndicatorSection.backgroundColor = .blue
+
+        
+        let controlStackView = UIStackView(arrangedSubviews: [PrevSection, IndicatorSection, NextSection])
+        
+        
+        controlStackView.axis = .horizontal
+        controlStackView.distribution = .fillEqually
+        
+        //enable auto layout
+        controlStackView.translatesAutoresizingMaskIntoConstraints = false
+        //add stack view
+        view.addSubview(controlStackView)
+        
+        
+        //position on bottom safe area
+        NSLayoutConstraint.activate([
+            controlStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            controlStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            controlStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            controlStackView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        
+        
+    }
 
     /*
     // MARK: - Navigation

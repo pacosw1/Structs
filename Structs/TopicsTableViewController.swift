@@ -100,9 +100,23 @@ class TopicsTableViewController: UITableViewController {
     }
     */
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        switch identifier {
+        case "Flashcard":
+            
+            if table.indexPathForSelectedRow!.row == 0 {
+                return true
+            }
+            let prevTopic = Topics[table.indexPathForSelectedRow!.row-1]
+            
+            return prevTopic.completed ? true : false
+        
+        default:
+            return true
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
