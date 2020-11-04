@@ -66,7 +66,7 @@
             },
             {
               "text": "Haremos la implementación ahora con un arreglo en JavaScript, iniciando con la declaración de la estructura de dato.",
-              "animation": "CODE from https://medium.com/better-programming/implementing-a-stack-in-javascript-73d1aa0483c1",
+              "animation": "stack",
               "completed": false
             },
             {
@@ -76,7 +76,7 @@
             },
             {
               "text": "Fácilmente podríamos agregarle una función a nuestra clase para obtener el tamaño de nuestra pila haciendo lo siguiente",
-              "animation": "CODE of length function",
+              "animation": "stack_length",
               "completed": false
             },
             {
@@ -102,7 +102,7 @@
             },
             {
               "text": "Además, debemos decirle a nuestro contador de elementos que ya agregamos un elemento. Por lo que la función final sería",
-              "animation": "CODE of push function",
+              "animation": "stack_push",
               "completed": false
             },
             {
@@ -138,7 +138,7 @@
             },
             {
               "text": "De forma que lo último que nos falta es disminuir nuestro contador de elementos en 1.",
-              "animation": "CODE of pop",
+              "animation": "stack_pop",
               "completed": false
             }
           ]
@@ -154,7 +154,7 @@
             },
             {
               "text": "isEmpty() consiste en, por su nombre en inglés, verificar si la pila está vacía. Esto se logra fácilmente revisando la longitud de nuestro arreglo de datos.",
-              "animation": "CODE of isEmpty()",
+              "animation": "stack_isEmpty",
               "completed": false
             },
             {
@@ -164,7 +164,7 @@
             },
             {
               "text": "De su nombre en inglés que significa ojear, la implementación de peek() es así de sencilla.",
-              "animation": "CODE of peek",
+              "animation": "stack_peek",
               "completed": false
             },
             {
@@ -174,7 +174,7 @@
             },
             {
               "text": "Para hacer esto debemos crear una variable temporal que nos diga cuántos elementos tiene nuestra pila e iterar por cada elemento.",
-              "animation": "CODE of print",
+              "animation": "stack_print",
               "completed": false
             }
           ]
@@ -216,7 +216,7 @@
           "flashcards": [
             {
               "text": "Las filas cumplen con un orden específico comúnmente conocido como FIFO (por sus siglas en inglés). Esto significa que el primer elemento que entra es el primero que sale (First In First Out).",
-              "animation": "ANIMATION of LIFO",
+              "animation": "",
               "completed": false
             },
             {
@@ -242,7 +242,7 @@
             },
             {
               "text": "Haremos la implementación ahora con un arreglo en JavaScript, iniciando con la declaración de la estructura de dato.",
-              "animation": "CODE of queue constructor",
+              "animation": "queue",
               "completed": false
             },
             {
@@ -252,7 +252,7 @@
             },
             {
               "text": "Fácilmente podríamos agregarle una función a nuestra clase para obtener el tamaño de nuestra fila haciendo lo siguiente",
-              "animation": "CODE of length function",
+              "animation": "queue_count",
               "completed": false
             },
             {
@@ -278,7 +278,7 @@
             },
             {
               "text": "Además, debemos decirle a nuestro contador de elementos que ya agregamos un elemento. Por lo que la función final sería",
-              "animation": "CODE of enqueue",
+              "animation": "queue_enqueue",
               "completed": false
             },
             {
@@ -314,7 +314,7 @@
             },
             {
               "text": "De forma que lo único que nos falta es disminuir nuestro contador de elementos en 1.",
-              "animation": "CODE of dequeue",
+              "animation": "queue_dequeue",
               "completed": false
             }
           ]
@@ -330,7 +330,7 @@
             },
             {
               "text": "isEmpty() consiste en, por su nombre en inglés, verificar si la fila está vacía. Esto se logra fácilmente revisando la longitud de nuestro arreglo de datos, al igual que hicimos con la pila.",
-              "animation": "CODE of isEmpty()",
+              "animation": "queue_isEmpty",
               "completed": false
             },
             {
@@ -340,7 +340,7 @@
             },
             {
               "text": "La implementación de esta función es así de fácil",
-              "animation": "CODE of front",
+              "animation": "queue_front",
               "completed": false
             },
             {
@@ -350,7 +350,7 @@
             },
             {
               "text": "Para hacer esto debemos crear una variable temporal que nos diga cuántos elementos tiene nuestra fila e iterar por cada elemento.",
-              "animation": "CODE of print",
+              "animation": "queue_print",
               "completed": false
             }
           ]
