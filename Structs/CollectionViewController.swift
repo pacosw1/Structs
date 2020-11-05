@@ -109,7 +109,7 @@ class CollectionViewController: UICollectionViewController {
             }
         }()
         cell.desc.text! = lesson.description
-        cell.percentage.text = String("\(lesson.percentage * 100) % Completed")
+        cell.percentage.text = String("\(lesson.percentage * 100) % Completado")
         cell.progressBar.progress = lesson.percentage
         
         

@@ -14,10 +14,19 @@
 		DA73A895253B8BDE00E9DD60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA73A893253B8BDE00E9DD60 /* Main.storyboard */; };
 		DA73A897253B8BE300E9DD60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA73A896253B8BE300E9DD60 /* Assets.xcassets */; };
 		DA73A89A253B8BE300E9DD60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA73A898253B8BE300E9DD60 /* LaunchScreen.storyboard */; };
+		DA8467D22553B4780071DA88 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8467D12553B4780071DA88 /* FlashcardView.swift */; };
+		DA8467D62553D85C0071DA88 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8467D52553D85C0071DA88 /* PageControl.swift */; };
+		DA8467D92553D8840071DA88 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8467D82553D8840071DA88 /* PageViewController.swift */; };
+		DA8467DD2553D99A0071DA88 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8467DC2553D99A0071DA88 /* PageView.swift */; };
 		DA8A1B7D253B8DDF0077CF46 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B7C253B8DDF0077CF46 /* Lesson.swift */; };
 		DA8A1B7F253B94660077CF46 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B7E253B94660077CF46 /* LessonCell.swift */; };
 		DA8A1B81253BAB600077CF46 /* TopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B80253BAB600077CF46 /* TopicsTableViewController.swift */; };
 		DA8A1B83253BAE830077CF46 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8A1B82253BAE830077CF46 /* TopicCell.swift */; };
+		DAF6B454253D3E1D0023D998 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6B451253D3E1C0023D998 /* FileHelper.swift */; };
+		DAF6B455253D3E1D0023D998 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6B452253D3E1C0023D998 /* Structs.swift */; };
+		DAF6B456253D3E1D0023D998 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF6B453253D3E1C0023D998 /* data.json */; };
+		DAF6B458253DD8A30023D998 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6B457253DD8A30023D998 /* FlashcardViewController.swift */; };
+		DAF8FFFA25544FDB00EE943E /* CompleteLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FFF925544FDB00EE943E /* CompleteLesson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +39,19 @@
 		DA73A896253B8BE300E9DD60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA73A899253B8BE300E9DD60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA73A89B253B8BE300E9DD60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA8467D12553B4780071DA88 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+		DA8467D52553D85C0071DA88 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		DA8467D82553D8840071DA88 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		DA8467DC2553D99A0071DA88 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		DA8A1B7C253B8DDF0077CF46 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		DA8A1B7E253B94660077CF46 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		DA8A1B80253BAB600077CF46 /* TopicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTableViewController.swift; sourceTree = "<group>"; };
 		DA8A1B82253BAE830077CF46 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		DAF6B451253D3E1C0023D998 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		DAF6B452253D3E1C0023D998 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		DAF6B453253D3E1C0023D998 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		DAF6B457253DD8A30023D998 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
+		DAF8FFF925544FDB00EE943E /* CompleteLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteLesson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +85,16 @@
 			isa = PBXGroup;
 			children = (
 				DA73A88D253B8BDE00E9DD60 /* AppDelegate.swift */,
+				DA8467D12553B4780071DA88 /* FlashcardView.swift */,
 				DA73A88F253B8BDE00E9DD60 /* SceneDelegate.swift */,
 				DA73A891253B8BDE00E9DD60 /* ViewController.swift */,
 				DA73A893253B8BDE00E9DD60 /* Main.storyboard */,
 				DA8A1B82253BAE830077CF46 /* TopicCell.swift */,
+				DAF6B451253D3E1C0023D998 /* FileHelper.swift */,
+				DAF6B453253D3E1C0023D998 /* data.json */,
+				DAF8FFF925544FDB00EE943E /* CompleteLesson.swift */,
+				DAF6B457253DD8A30023D998 /* FlashcardViewController.swift */,
+				DAF6B452253D3E1C0023D998 /* Structs.swift */,
 				DA8A1B80253BAB600077CF46 /* TopicsTableViewController.swift */,
 				DA8A1B7C253B8DDF0077CF46 /* Lesson.swift */,
 				DA499B49253B8D7500BBCB28 /* CollectionViewController.swift */,
@@ -78,6 +102,9 @@
 				DA73A896253B8BE300E9DD60 /* Assets.xcassets */,
 				DA73A898253B8BE300E9DD60 /* LaunchScreen.storyboard */,
 				DA73A89B253B8BE300E9DD60 /* Info.plist */,
+				DA8467D52553D85C0071DA88 /* PageControl.swift */,
+				DA8467D82553D8840071DA88 /* PageViewController.swift */,
+				DA8467DC2553D99A0071DA88 /* PageView.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -140,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF6B456253D3E1D0023D998 /* data.json in Resources */,
 				DA73A89A253B8BE300E9DD60 /* LaunchScreen.storyboard in Resources */,
 				DA73A897253B8BE300E9DD60 /* Assets.xcassets in Resources */,
 				DA73A895253B8BDE00E9DD60 /* Main.storyboard in Resources */,
@@ -154,10 +182,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8A1B7D253B8DDF0077CF46 /* Lesson.swift in Sources */,
+				DA8467D92553D8840071DA88 /* PageViewController.swift in Sources */,
 				DA8A1B83253BAE830077CF46 /* TopicCell.swift in Sources */,
+				DAF6B458253DD8A30023D998 /* FlashcardViewController.swift in Sources */,
+				DA8467D62553D85C0071DA88 /* PageControl.swift in Sources */,
+				DAF6B455253D3E1D0023D998 /* Structs.swift in Sources */,
 				DA8A1B7F253B94660077CF46 /* LessonCell.swift in Sources */,
 				DA499B4A253B8D7500BBCB28 /* CollectionViewController.swift in Sources */,
+				DA8467D22553B4780071DA88 /* FlashcardView.swift in Sources */,
 				DA73A892253B8BDE00E9DD60 /* ViewController.swift in Sources */,
+				DA8467DD2553D99A0071DA88 /* PageView.swift in Sources */,
+				DAF6B454253D3E1D0023D998 /* FileHelper.swift in Sources */,
+				DAF8FFFA25544FDB00EE943E /* CompleteLesson.swift in Sources */,
 				DA73A88E253B8BDE00E9DD60 /* AppDelegate.swift in Sources */,
 				DA73A890253B8BDE00E9DD60 /* SceneDelegate.swift in Sources */,
 				DA8A1B81253BAB600077CF46 /* TopicsTableViewController.swift in Sources */,

@@ -105,9 +105,11 @@ class TopicsTableViewController: UITableViewController {
         switch identifier {
         case "Flashcard":
             
+            //first is always open
             if table.indexPathForSelectedRow!.row == 0 {
                 return true
             }
+            //allow access conditionally if previous lesson was completed
             let prevTopic = Topics[table.indexPathForSelectedRow!.row-1]
             
             return prevTopic.completed ? true : false
