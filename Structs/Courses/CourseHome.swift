@@ -14,7 +14,79 @@ struct CourseHome: View {
     
     var body: some View {
         
-        Text(data.lesson)
+        
+        VStack {
+            
+            HomeHeader(data: data)
+            Divider()
+            List(data.topics) { topic in
+                NavigationLink(
+                    destination: CourseHome(data: data)) {
+                    
+                    TopicRow(topic: topic, prevTopic: data.topics[topic.id - 1])
+
+                }
+                .disabled(topic.id > 1 && !data.topics[topic.id - 1].completed)
+            }
+            
+           
+
+        }
+        .navigationBarTitle(Text("Structs"))
+    }
+}
+
+
+
+struct HomeHeader: View {
+    
+    var data: Struct
+    
+    var body: some View {
+        VStack(alignment: .leading)  {
+            
+            HStack {
+             
+                Spacer()
+                    
+            }
+            
+
+            ProgressBar(value: data.percentage)
+                .offset(x: 0, y: -10)
+                .frame(width: 200)
+            Text(data.description)
+                .font(.footnote)
+            
+            Text("Lessons")
+                .padding(.top, 20)
+                .font(.footnote)
+                
+            
+        }
+        .navigationBarTitle(Text(data.lesson))
+        .padding(.horizontal,20)
+        .padding(.top, 10)
+        .padding(.bottom, 0)
+    }
+    
+}
+
+
+struct TopicRow: View {
+    
+    var topic: Topic
+    var prevTopic: Topic
+    
+    
+    var body: some View {
+        HStack {
+            Text(topic.name)
+            Spacer()
+            
+            Image(systemName: topic.completed || topic.id == 1 ? "lock.open" : "lock")
+            
+        }
     }
 }
 

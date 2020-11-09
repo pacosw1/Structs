@@ -24,7 +24,7 @@ struct Struct: Codable, Identifiable {
 }
 
 // MARK: - Topic
-struct Topic: Codable {
+struct Topic: Codable, Identifiable {
     var id: Int
     let name: String
     let completed: Bool

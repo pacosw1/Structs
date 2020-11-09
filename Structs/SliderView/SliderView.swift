@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PageView<Page: View>: View {
+struct SliderView<Page: View>: View {
     
     var viewControllers: [UIHostingController<Page>]
     

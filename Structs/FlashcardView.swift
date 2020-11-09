@@ -20,7 +20,6 @@ struct FlashcardView: View {
                  
                     Header(title: title, progress: progress)
                     Spacer()
-                    PageView(flashcards.map{ Content(text: $0.text) })
                   
                     
                 }.onAppear() {
