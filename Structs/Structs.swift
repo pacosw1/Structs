@@ -14,7 +14,9 @@ struct Structs: Codable {
 }
 
 // MARK: - Struct
-struct Struct: Codable {
+struct Struct: Codable, Identifiable {
+    var id: Int
+    
     let lesson, description, level: String
     let percentage: Float
     let completed, quizCompleted: Bool
@@ -23,13 +25,15 @@ struct Struct: Codable {
 
 // MARK: - Topic
 struct Topic: Codable {
+    var id: Int
     let name: String
     let completed: Bool
     let flashcards: [Flashcard]
 }
 
 // MARK: - Flashcard
-struct Flashcard: Codable {
+struct Flashcard: Hashable, Codable {
+    var id: Int
     let text: String
     let animation: String
     let completed: Bool

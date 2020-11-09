@@ -26,7 +26,9 @@
 		DAF6B455253D3E1D0023D998 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6B452253D3E1C0023D998 /* Structs.swift */; };
 		DAF6B456253D3E1D0023D998 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF6B453253D3E1C0023D998 /* data.json */; };
 		DAF6B458253DD8A30023D998 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6B457253DD8A30023D998 /* FlashcardViewController.swift */; };
+		DAF8000125546E8300EE943E /* TopicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8000025546E8200EE943E /* TopicList.swift */; };
 		DAF8FFFA25544FDB00EE943E /* CompleteLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FFF925544FDB00EE943E /* CompleteLesson.swift */; };
+		DAF8FFFE2554672100EE943E /* TopicRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FFFD2554672100EE943E /* TopicRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +53,9 @@
 		DAF6B452253D3E1C0023D998 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		DAF6B453253D3E1C0023D998 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		DAF6B457253DD8A30023D998 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
+		DAF8000025546E8200EE943E /* TopicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicList.swift; sourceTree = "<group>"; };
 		DAF8FFF925544FDB00EE943E /* CompleteLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteLesson.swift; sourceTree = "<group>"; };
+		DAF8FFFD2554672100EE943E /* TopicRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				DAF6B451253D3E1C0023D998 /* FileHelper.swift */,
 				DAF6B453253D3E1C0023D998 /* data.json */,
 				DAF8FFF925544FDB00EE943E /* CompleteLesson.swift */,
+				DAF8FFFC255466CD00EE943E /* Navigation */,
 				DAF6B457253DD8A30023D998 /* FlashcardViewController.swift */,
 				DAF6B452253D3E1C0023D998 /* Structs.swift */,
 				DA8A1B80253BAB600077CF46 /* TopicsTableViewController.swift */,
@@ -107,6 +112,15 @@
 				DA8467DC2553D99A0071DA88 /* PageView.swift */,
 			);
 			path = Structs;
+			sourceTree = "<group>";
+		};
+		DAF8FFFC255466CD00EE943E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				DAF8FFFD2554672100EE943E /* TopicRow.swift */,
+				DAF8000025546E8200EE943E /* TopicList.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +198,9 @@
 				DA8A1B7D253B8DDF0077CF46 /* Lesson.swift in Sources */,
 				DA8467D92553D8840071DA88 /* PageViewController.swift in Sources */,
 				DA8A1B83253BAE830077CF46 /* TopicCell.swift in Sources */,
+				DAF8FFFE2554672100EE943E /* TopicRow.swift in Sources */,
 				DAF6B458253DD8A30023D998 /* FlashcardViewController.swift in Sources */,
+				DAF8000125546E8300EE943E /* TopicList.swift in Sources */,
 				DA8467D62553D85C0071DA88 /* PageControl.swift in Sources */,
 				DAF6B455253D3E1D0023D998 /* Structs.swift in Sources */,
 				DA8A1B7F253B94660077CF46 /* LessonCell.swift in Sources */,

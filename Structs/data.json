@@ -9,6 +9,7 @@
             "quizCompleted": false,
             "topics": [
                 {
+                    "id": 1
                     "name": "¿Qué es una pila?",
                     "completed": false,
                     "flashcards": [
@@ -18,11 +19,13 @@
                             "completed": false
                         },
                         {
+                            "id": 2
                             "text": "Existen muchos ejemplos de la vida cotidiana, como una pila de platos o libros. En esta todos los platos están apilados uno sobre otro.",
                             "animation": "IMAGE of stack of plates",
                             "completed": false
                         },
                         {
+                            "id": 3,
                             "text": "Existen muchos ejemplos de la vida cotidiana, como una pila de platos o libros. En esta todos los platos están apilados uno sobre otro.",
                             "animation": "IMAGE of stack of plates",
                             "completed": false

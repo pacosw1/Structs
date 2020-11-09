@@ -1,28 +1,29 @@
-//
-//  FileHelper.swift
-//  Structs
-//
-//  Created by Ale Pestana on 10/17/20.
-//  Copyright © 2020 Francisco Sainz. All rights reserved.
-//
-
 import Foundation
+import SwiftUI
 
-class Helper {
-    static let  shared = Helper()
+let structData: [Struct] = load("data.json")
+
+func load<T: Decodable>(_ filename: String) -> T {
+    let data: Data
     
-    init() {
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+    else {
+        fatalError("Couldn't find \(filename) in main bundle.")
     }
     
-    func readJSONFilesGetStructs() -> [Struct]! {
-        do {
-            guard let bundlePath = Bundle.main.path(forResource: "data", ofType: "json") else {return nil}
-            guard let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) else {return nil}
-            let root = try? JSONDecoder().decode(Structs.self, from: jsonData)
-            return root?.structs
-        } catch {
-            return nil
-        }
+    do {
+        data = try Data(contentsOf: file)
+    } catch {
+        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
     }
     
+    do {
+        let decoder = JSONDecoder()
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    }
 }
+
+
+

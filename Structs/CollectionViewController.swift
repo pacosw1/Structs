@@ -19,17 +19,14 @@ class CollectionViewController: UICollectionViewController {
     
     var lessons: [Lesson] = []
     
-    var dataLoader = Helper();
-    var structs: [Struct]!
+    var structs: [Struct] = structData
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataLoader = Helper()
         collectionView!.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
         
-        structs = dataLoader.readJSONFilesGetStructs()
     
         title = "Structs"
         
