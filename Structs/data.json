@@ -1,6 +1,6 @@
-{
-    "structs": [
+[
         {
+            "id": 1,
             "lesson": "LA PILA",
             "percentage": 0.2,
             "description": "Una de las estructuras mas divertidas y utiles que jamas aprenderas",
@@ -9,17 +9,18 @@
             "quizCompleted": false,
             "topics": [
                 {
-                    "id": 1
+                    "id": 1,
                     "name": "¿Qué es una pila?",
                     "completed": false,
                     "flashcards": [
                         {
+                            "id": 1,
                             "text": "Una pila es una estructura de datos lineal que cumple con un orden específico en el que las operaciones son realizadas.",
                             "animation": "",
                             "completed": false
                         },
                         {
-                            "id": 2
+                            "id": 2,
                             "text": "Existen muchos ejemplos de la vida cotidiana, como una pila de platos o libros. En esta todos los platos están apilados uno sobre otro.",
                             "animation": "IMAGE of stack of plates",
                             "completed": false
@@ -33,25 +34,30 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "name": "Principio LIFO",
                     "completed": false,
                     "flashcards": [
                         {
+                            "id": 1,
                             "text": "Las pilas cumplen con un orden específico comúnmente conocido como LIFO (por sus siglas en inglés). Esto significa que el último que entra es el primero que sale (Last In First Out).",
                             "animation": "ANIMATION of LIFO",
                             "completed": false
                         },
                         {
+                            "id": 2,
                             "text": "Otro tipo de orden es el FIFO (por sus siglas en inglés), utilizado en las filas. Este consiste en que el primero que entra es el primero que sale.",
                             "animation": "ANIMATION of FIFO",
                             "completed": false
                         },
                         {
+                            "id": 3,
                             "text": "El orden LIFO quiere decir que todas las operaciones ocurren de un mismo lado. Como veíamos el ejemplo de los platos, si queremos agregar otro plato a la pila lo tenemos que hacer por arriba. Y si queremos sacar uno también lo hacemos por arriba.",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 4,
                             "text": "",
                             "animation": "ANIMATION of LIFO on plates",
                             "completed": false
@@ -59,30 +65,36 @@
                     ]
                 },
                 {
+                    "id": 3,
                     "name": "Implementación en JavaScript",
                     "completed": false,
                     "flashcards": [
                         {
+                            "id": 1,
                             "text": "En cualquier lenguaje de programación las pilas pueden ser implementadas como un arreglo (una lista de datos) o una lista encadenada (una lista de datos donde cada elemento tiene un apuntador al siguiente elemento de la lista).",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 2,
                             "text": "Haremos la implementación ahora con un arreglo en JavaScript, iniciando con la declaración de la estructura de dato.",
                             "animation": "CODE from https://medium.com/better-programming/implementing-a-stack-in-javascript-73d1aa0483c1",
                             "completed": false
                         },
                         {
+                            "id": 3,
                             "text": "Como te habrás dado cuenta, lo único que realiza el código es: inicializar un arreglo vacío y el número de elementos a 0.",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 4,
                             "text": "Fácilmente podríamos agregarle una función a nuestra clase para obtener el tamaño de nuestra pila haciendo lo siguiente",
                             "animation": "CODE of length function",
                             "completed": false
                         },
                         {
+                            "id": 4,
                             "text": "Esto es todo lo que se necesita para crear una pila, ¡fácil! En el siguiente tema veremos como agregar y eliminar elementos en la pila.",
                             "animation": "",
                             "completed": false
@@ -90,25 +102,30 @@
                     ]
                 },
                 {
+                    "id": 4,
                     "name": "Agregar a una pila",
                     "completed": false,
                     "flashcards": [
                         {
+                            "id": 1,
                             "text": "Lo único que tenemos hasta ahora es nuestra clase de pila que se ve algo así",
                             "animation": "IMAGE of empty stack",
                             "completed": false
                         },
                         {
+                            "id": 2,
                             "text": "Si queremos agregarle un elemento lo único que debemos hacer es agregarlo al arreglo en la posición del número de elementos. Esta operación se conoce comúnmente como push (que significa agregar en inglés.",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 3,
                             "text": "Además, debemos decirle a nuestro contador de elementos que ya agregamos un elemento. Por lo que la función final sería",
                             "animation": "CODE of push function",
                             "completed": false
                         },
                         {
+                            "id": 4,
                             "text": "De esta forma, lo único que estamos haciendo es agregar un elemento al final de nuestro arreglo.",
                             "animation": "ANIMATION of empty stack",
                             "completed": false
@@ -116,30 +133,36 @@
                     ]
                 },
                 {
+                    "id": 5,
                     "name": "Eliminar de una pila",
                     "completed": false,
                     "flashcards": [
                         {
+                            "id": 1,
                             "text": "Debido a que las pilas siguen el orden LIFO, el primer elemento que sale de la pila es el último que se agregó. Esto quiere decir que ese es aquel que se elimina primero.",
                             "animation": "ANIMATION of pop",
                             "completed": false
                         },
                         {
+                            "id": 2,
                             "text": "Nuestra función se llamará pop, comúnmente conocida así por su nombre en inglés. Además de eliminar el último elemento en entrar a la pila, regresará este elemento antes de removerlo. Esta es una operación muy útil que nos permite ver cuál era el último elemento de nuestra pila.",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 3,
                             "text": "Para poder eliminar ese elemento debemos primero revisar que la pila tiene elementos. De otra forma estaríamos tratando de eliminar algo que no existe.",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 4,
                             "text": "Una función muy útil de JavaScript para hacer esto es el pop de los arreglos, la cual consiste en eliminar el último elemento del arreglo.",
                             "animation": "ANIMATION of pop ARRAY",
                             "completed": false
                         },
                         {
+                            "id": 5,
                             "text": "De forma que lo último que nos falta es disminuir nuestro contador de elementos en 1.",
                             "animation": "CODE of pop",
                             "completed": false
@@ -147,35 +170,42 @@
                     ]
                 },
                 {
+                    "id": 6,
                     "name": "Más funciones",
                     "completed": false,
                     "flashcards": [
                         {
+                            "id": 1,
                             "text": "Otras funciones útiles para manejar o editar pilas son: isEmpty(), peek() y print().",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 2,
                             "text": "isEmpty() consiste en, por su nombre en inglés, verificar si la pila está vacía. Esto se logra fácilmente revisando la longitud de nuestro arreglo de datos.",
                             "animation": "CODE of isEmpty()",
                             "completed": false
                         },
                         {
+                            "id": 3,
                             "text": "peek() se parece mucho a nuestra función anterior de pop(), donde regresábamos el último elemento en entrar a la pila y lo eliminábamos. La diferencia es que ahora solo queremos regresar el último elemento, sin removerlo de nuestra pila.",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 4,
                             "text": "De su nombre en inglés que significa ojear, la implementación de peek() es así de sencilla.",
                             "animation": "CODE of peek",
                             "completed": false
                         },
                         {
+                            "id": 5,
                             "text": "print() realiza lo que su nombre nos dice en inglés: imprimir los elementos de nuestra pila. Debido a que, como ya hemos visto, las pilas siguen el orden LIFO, imprimiremos los elementos del último que entró a la pila hasta el primero.",
                             "animation": "",
                             "completed": false
                         },
                         {
+                            "id": 6,
                             "text": "Para hacer esto debemos crear una variable temporal que nos diga cuántos elementos tiene nuestra pila e iterar por cada elemento del arreglo.",
                             "animation": "CODE of print",
                             "completed": false
@@ -183,15 +213,18 @@
                     ]
                 },
                 {
+                    "id": 7,
                     "name": "Aplicaciones de pilas",
                     "completed": false,
                     "flashcards": [
                         {
+                            "id": 1,
                             "text": "...",
                             "animation": "http://....",
                             "completed": false
                         },
                         {
+                            "id": 2,
                             "text": "...",
                             "animation": "...",
                             "completed": false
@@ -201,6 +234,7 @@
             ]
         },
         {
+            "id": 2,
             "lesson": "LA FILA",
             "percentage": 0.0,
             "description": "Seguro te gustara esta estructura porque aunque no lo creas ya tienes mucha experiencia usando esta estructura en tu vida cotidiana",
@@ -212,6 +246,7 @@
             ]
         },
         {
+            "id": 3,
             "lesson": "LA LISTA ENCADENADA",
             "completed": false,
             "percentage": 0.0,
@@ -224,4 +259,4 @@
         }
         
     ]
-}
+
