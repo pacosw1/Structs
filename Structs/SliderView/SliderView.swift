@@ -28,6 +28,7 @@ struct SliderView<Page: View>: View {
         .onAppear() {
             print("hello")
         }
+        .onDisappear{print("disappearing")}
     }
 }
 
