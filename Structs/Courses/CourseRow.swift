@@ -42,8 +42,8 @@ struct RowDetail: View {
         
         HStack {
             VStack(alignment: .leading) {
-                ProgressBar(value: 0.2)
-                    .frame(width: 150, alignment: .leading)
+//                ProgressBar(value: 0.2)
+//                    .frame(width: 150, alignment: .leading)
                 Text(desc)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)

@@ -44,8 +44,11 @@ struct PageViewController: UIViewControllerRepresentable {
             guard let index = parent.controllers.firstIndex(of: viewController) else {
                 return nil
             }
+            
+            print("current: \(index), next: \(index+1), max: \(parent.controllers.count-1)")
+            
             if index == 0 {
-                return parent.controllers.last
+                return nil
             }
             return parent.controllers[index - 1]
         }
@@ -56,6 +59,8 @@ struct PageViewController: UIViewControllerRepresentable {
             guard let index = parent.controllers.firstIndex(of: viewController) else {
                 return nil
             }
+            print("current: \(index), next: \(index+1), max: \(parent.controllers.count-1)")
+            
             if index + 1 == parent.controllers.count {
                 
                 return nil
@@ -64,6 +69,11 @@ struct PageViewController: UIViewControllerRepresentable {
         }
 
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+            
+            
+            if !completed {
+                print(parent.controllers)
+            }
             if completed,
                 let visibleViewController = pageViewController.viewControllers?.first,
                 let index = parent.controllers.firstIndex(of: visibleViewController) {

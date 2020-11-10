@@ -12,6 +12,9 @@ struct LessonView: View {
     
     var data: Topic
     
+    @State private var currentPage: Int = 0
+    @State private var canFinish: Bool = false
+    
     var body: some View {
         
         
@@ -20,29 +23,40 @@ struct LessonView: View {
         VStack {
             
             
-            SliderView(
-                
-                    data.flashcards.map { card in
-                        FlashCard(text: card.text)
-                    }
-                
-            )
+            if #available(iOS 14.0, *) {
+                SliderView(
+                    
+                    views:
+                        data.flashcards.map { card in
+                            FlashCard(text: card.text)
+                        }
+                    , current: $currentPage
+                    
+                    
+                )
+                .onChange(of: currentPage) { value in
+                    
+                    canFinish = currentPage == data.flashcards.count-1
+                }
+            } else {
+                // Fallback on earlier versions
+            }
             Spacer()
 //            Divider()
             HStack {
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                   Text("Completar Leccion")
+                    Text(canFinish ? "Marcar como Terminado": "")
                     .accentColor(Color.white)
                     .font(.headline)
                 }
-                .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                .disabled(!canFinish)
                 Spacer()
 
             }
             .padding(.vertical, 20)
             .frame(height: 90)
-            .background(Color.blue.opacity(1))
+            .background(canFinish ? Color.blue.opacity(1): Color.gray.opacity(0.1))
          
  
             
@@ -52,6 +66,8 @@ struct LessonView: View {
            
         }
         .navigationBarTitle(Text(data.name))
+        
+        
     }
 }
 

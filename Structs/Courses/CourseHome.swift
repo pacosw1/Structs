@@ -51,10 +51,10 @@ struct HomeHeader: View {
                     
             }
             
-
-            ProgressBar(value: data.percentage)
-                .offset(x: 0, y: -10)
-                .frame(width: 200)
+//
+//            Progress(value: data.percentage)
+//                .offset(x: 0, y: -10)
+//                .frame(width: 200)
             Text(data.description)
                 .font(.footnote)
             

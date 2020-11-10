@@ -2,21 +2,31 @@ import SwiftUI
 
 struct SliderView<Page: View>: View {
     
-    var viewControllers: [UIHostingController<Page>]
+    @State var viewControllers: [UIHostingController<Page>]
     
-    @State var currentPage = 0
+     @Binding var currentPage: Int
 
-    init(_ views: [Page]) {
-        self.viewControllers = views.map { UIHostingController(rootView: $0) }
+    public init(views: [Page], current: Binding<Int>) {
+        self._viewControllers = State(initialValue: views.map { UIHostingController(rootView: $0) })
+        self._currentPage = current
+        print("'rerender'")
     }
 
     var body: some View {
         VStack {
-        
+            
+            
             PageViewController(controllers: viewControllers, currentPage: $currentPage)
+                .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                    print(currentPage)
+                    print("total pages: \(self.viewControllers.count)")
+                })
             PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
                 .padding(.bottom, 20)
                 
+        }
+        .onAppear() {
+            print("hello")
         }
     }
 }
