@@ -58,7 +58,7 @@ struct HomeHeader: View {
             Text(data.description)
                 .font(.footnote)
             
-            Text("Lessons")
+            Text("Temas")
                 .padding(.top, 20)
                 .font(.footnote)
                 
