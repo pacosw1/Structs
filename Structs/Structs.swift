@@ -32,7 +32,7 @@ struct Topic: Codable, Identifiable {
 }
 
 // MARK: - Flashcard
-struct Flashcard: Hashable, Codable {
+struct Flashcard: Hashable, Codable, Identifiable {
     var id: Int
     let text: String
     let animation: String

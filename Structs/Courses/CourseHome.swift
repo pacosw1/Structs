@@ -21,7 +21,7 @@ struct CourseHome: View {
             Divider()
             List(data.topics) { topic in
                 NavigationLink(
-                    destination: CourseHome(data: data)) {
+                    destination: LessonView(data: topic)) {
                     
                     TopicRow(topic: topic, prevTopic: data.topics[topic.id - 1])
 
