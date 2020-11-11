@@ -9,33 +9,29 @@
 import SwiftUI
 
 struct CourseList: View {
-
+    
     var body: some View {
         
         NavigationView {
-            List(structData) { item in
-                NavigationLink(destination: CourseHome(data: item)) {
-                    CourseRow(data: item)
+            List {
+                ForEach(0..<structData.count) {
+                    i in
+                    NavigationLink(destination: CourseHome(data: structData[i], structIndex: i)) {
+                        CourseRow(data: structData[i])
+                    }
                 }
-                
             }
             .navigationBarTitle(Text("Structs"))
-        }
-     
+            }
+        
     }
 }
-
-
-
-
-
-
 
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         CourseList()
-            
+        
     }
 }
-	
+
