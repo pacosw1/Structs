@@ -17,7 +17,7 @@ struct Structs: Codable {
 struct Struct: Codable, Identifiable {
     var id: Int
     let lesson: String
-    let percentage: Float
+    var percentage: Float
     let description, level: String
     var completed: Bool
     var topics: [Topic]

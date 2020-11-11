@@ -9,33 +9,36 @@
 import SwiftUI
 
 struct CourseHome: View {
-        
+    
     var data: Struct
+    var structIndex: Int
     
     var body: some View {
-        
         
         VStack {
             
             HomeHeader(data: data)
             Divider()
-            List(data.topics) { topic in
-                NavigationLink(
-                    destination: LessonView(data: topic)) {
-                    
-                    TopicRow(topic: topic, prevTopic: data.topics[topic.id - 1])
-
+            List {
+                ForEach(0..<data.topics.count) {
+                    i in
+                    NavigationLink(
+                        destination: LessonView(data: data.topics[i], structIndex: structIndex, topicIndex: i)) {
+                        
+                        TopicRow(topic: data.topics[i], prevTopic: data.topics[data.topics[i].id - 1])
+                        
+                    }
+                    .disabled(data.topics[i].id > 1 && !data.topics[data.topics[i].id - 1].completed)
                 }
-                .disabled(topic.id > 1 && !data.topics[topic.id - 1].completed)
+                
+                
+                
             }
-            
-           
+            .navigationBarTitle(Text("Structs"))
 
         }
-        .navigationBarTitle(Text("Structs"))
     }
 }
-
 
 
 struct HomeHeader: View {
@@ -46,22 +49,22 @@ struct HomeHeader: View {
         VStack(alignment: .leading)  {
             
             HStack {
-             
+                
                 Spacer()
-                    
+                
             }
             
-//
-//            Progress(value: data.percentage)
-//                .offset(x: 0, y: -10)
-//                .frame(width: 200)
+            //
+            //            Progress(value: data.percentage)
+            //                .offset(x: 0, y: -10)
+            //                .frame(width: 200)
             Text(data.description)
                 .font(.footnote)
             
             Text("Temas")
                 .padding(.top, 20)
                 .font(.footnote)
-                
+            
             
         }
         .navigationBarTitle(Text(data.lesson))
@@ -92,6 +95,7 @@ struct TopicRow: View {
 
 struct CourseHome_Previews: PreviewProvider {
     static var previews: some View {
-        CourseHome(data: structData[0])
+        CourseHome(data: structData[0], structIndex: 0)
     }
 }
+
