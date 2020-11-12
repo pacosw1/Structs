@@ -11,7 +11,7 @@ import SwiftUI
 
 class ViewController: UIViewController {
     
-    let host = UIHostingController(rootView: CourseList())
+    let host = UIHostingController(rootView: CourseList(structs: structData))
 
 
     override func viewDidLoad() {

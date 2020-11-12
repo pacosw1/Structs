@@ -10,14 +10,13 @@ import SwiftUI
 
 struct CourseHome: View {
     
-    var data: Struct
+    @Binding var data: Struct
     var structIndex: Int
     
     var body: some View {
         
         VStack {
-            
-            HomeHeader(data: data)
+            HomeHeader(data: $data, structIndex: structIndex)
             Divider()
             List {
                 ForEach(0..<data.topics.count) {
@@ -25,17 +24,15 @@ struct CourseHome: View {
                     NavigationLink(
                         destination: LessonView(data: data.topics[i], structIndex: structIndex, topicIndex: i)) {
                         
-                        TopicRow(topic: data.topics[i], prevTopic: data.topics[data.topics[i].id - 1])
-                        
+                        TopicRow(topic: $data.topics[i], prevTopic: i == 0 ? $data.topics[i] : $data.topics[i-1])
                     }
-                    .disabled(data.topics[i].id > 1 && !data.topics[data.topics[i].id - 1].completed)
+                    .disabled(i == 0 ? false : !data.topics[i-1].completed)
                 }
-                
-                
-                
             }
             .navigationBarTitle(Text("Structs"))
-
+            .onAppear(perform: {
+                self.data = loadJSON("data.json")[structIndex]
+            })
         }
     }
 }
@@ -43,15 +40,14 @@ struct CourseHome: View {
 
 struct HomeHeader: View {
     
-    var data: Struct
+    @Binding var data: Struct
+    var structIndex: Int
     
     var body: some View {
         VStack(alignment: .leading)  {
             
             HStack {
-                
                 Spacer()
-                
             }
             
             //
@@ -64,22 +60,19 @@ struct HomeHeader: View {
             Text("Temas")
                 .padding(.top, 20)
                 .font(.footnote)
-            
-            
         }
         .navigationBarTitle(Text(data.lesson))
         .padding(.horizontal,20)
         .padding(.top, 10)
         .padding(.bottom, 0)
     }
-    
 }
 
 
 struct TopicRow: View {
     
-    var topic: Topic
-    var prevTopic: Topic
+    @Binding var topic: Topic
+    @Binding var prevTopic: Topic
     
     
     var body: some View {
@@ -87,15 +80,15 @@ struct TopicRow: View {
             Text(topic.name)
             Spacer()
             
-            Image(systemName: topic.completed || topic.id == 1 ? "lock.open" : "lock")
+            Image(systemName: topic.completed || topic.id == 1 || prevTopic.completed ? "lock.open" : "lock")
             
         }
     }
 }
 
-struct CourseHome_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseHome(data: structData[0], structIndex: 0)
-    }
-}
+//struct CourseHome_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CourseHome(data: structData[0], structIndex: 0)
+//    }
+//}
 
