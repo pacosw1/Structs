@@ -10,19 +10,24 @@ import SwiftUI
 
 struct CourseList: View {
     
+    @State var structs : [Struct]
+    
     var body: some View {
         
         NavigationView {
             List {
-                ForEach(0..<structData.count) {
+                ForEach(0..<structs.count) {
                     i in
-                    NavigationLink(destination: CourseHome(data: structData[i], structIndex: i)) {
-                        CourseRow(data: structData[i])
+                    NavigationLink(destination: CourseHome(data: $structs[i], structIndex: i)) {
+                        CourseRow(data: $structs[i], structIndex: i)
                     }
                 }
             }
             .navigationBarTitle(Text("Structs"))
-            }
+            .onAppear(perform: {
+                structData = loadJSON("data.json")
+            })
+        }
         
     }
 }
@@ -30,7 +35,7 @@ struct CourseList: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseList()
+        CourseList(structs: structData)
         
     }
 }

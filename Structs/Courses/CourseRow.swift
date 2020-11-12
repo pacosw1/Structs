@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct CourseRow: View {
-    
-    
-    var data: Struct
+
+    @Binding var data: Struct
+    var structIndex: Int
     
     var body: some View {
         
         HStack {
             VStack {
-                RowHeader(title: data.lesson, level: data.level)
-                RowDetail(desc: data.description, progress: data.percentage)
+                RowHeader(title: $data.lesson, level: $data.level)
+                RowDetail(desc: $data.description, progress: $data.percentage)
             }
             
             Spacer()
@@ -26,8 +26,11 @@ struct CourseRow: View {
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 30)
-//        .background(Color.black.opacity(0.05))
-       
+        .onAppear(perform: {
+            self.data = loadJSON("data.json")[structIndex]
+        })
+        //        .background(Color.black.opacity(0.05))
+        
     }
 }
 
@@ -35,15 +38,15 @@ struct CourseRow: View {
 
 struct RowDetail: View {
     
-    var desc: String
-    var progress: Float
+    @Binding var desc: String
+    @Binding var progress: Float
     
     var body: some View {
         
         HStack {
             VStack(alignment: .leading) {
-//                ProgressBar(value: 0.2)
-//                    .frame(width: 150, alignment: .leading)
+                //                ProgressBar(value: 0.2)
+                //                    .frame(width: 150, alignment: .leading)
                 Text(desc)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
@@ -59,8 +62,8 @@ struct RowDetail: View {
 
 struct RowHeader: View {
     
-    var title: String
-    var level: String
+    @Binding var title: String
+    @Binding var level: String
     
     var body: some View {
         
@@ -69,18 +72,13 @@ struct RowHeader: View {
                 .font(.system(size: 15))
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             Spacer()
-            
- 
-                Text(level).font(.system(size: 10))
-                   
-       
-          
+            Text(level).font(.system(size: 10))
         }
     }
 }
 
-struct CourseRow_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseRow(data: structData[0])
-    }
-}
+//struct CourseRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CourseRow(data: structData[0], structIndex: 0)
+//    }
+//}
