@@ -46,11 +46,7 @@ struct QuizBody: View {
         
         
         ScrollView {
-            Question()
-            Question()
-            Question()
-            Question()
-            Question()
+            QuestionView()
         }
         
         .padding(.vertical, 10)
@@ -85,7 +81,7 @@ struct QuestionOptions: View {
 
 
 
-struct Question: View {
+struct QuestionView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
