@@ -79,8 +79,12 @@ struct FlashCard: View {
     var body: some View {
         
         VStack {
+            
+//            AnimationView()
+            Spacer()
             Text(text)
                 .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                .padding(.bottom, 50)
             
         }
         .padding(20)
@@ -92,3 +96,14 @@ struct LessonView_Previews: PreviewProvider {
         LessonView(data: structData[0].topics[0])
     }
 }
+
+
+
+//struct AnimationView: View {
+//    
+//    
+//    
+//    var body: some View {
+//        
+//    }
+//}
