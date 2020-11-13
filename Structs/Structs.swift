@@ -16,19 +16,41 @@ struct Structs: Codable {
 // MARK: - Struct
 struct Struct: Codable, Identifiable {
     var id: Int
-    
-    let lesson, description, level: String
-    let percentage: Float
-    let completed, quizCompleted: Bool
-    let topics: [Topic]
+    var lesson: String
+    var percentage: Float
+    var description, level: String
+    var completed: Bool
+    var topics: [Topic]
+    let quiz: Quiz
+}
+
+// MARK: - Quiz
+struct Quiz: Codable, Identifiable {
+    var id: Int
+    var completed: Bool
+    let questions: [Question]
+}
+
+// MARK: - Question
+struct Question: Codable, Identifiable {
+    var id: Int
+    let question: String
+    let answers: [Answer]
+}
+
+// MARK: - Answer
+struct Answer: Codable, Identifiable {
+    var id: Int
+    let answer: String
+    let isCorrect: Bool
 }
 
 // MARK: - Topic
 struct Topic: Codable, Identifiable {
     var id: Int
     let name: String
-    let completed: Bool
-    let flashcards: [Flashcard]
+    var completed: Bool
+    var flashcards: [Flashcard]
 }
 
 // MARK: - Flashcard
@@ -36,5 +58,5 @@ struct Flashcard: Hashable, Codable, Identifiable {
     var id: Int
     let text: String
     let animation: String
-    let completed: Bool
+    var completed: Bool
 }
