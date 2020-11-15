@@ -59,4 +59,6 @@ struct Flashcard: Hashable, Codable, Identifiable {
     let text: String
     let animation: String
     var completed: Bool
+    var isAnimated: Bool
+    var duration: Int
 }
