@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CourseRow: View {
-
+    
     @Binding var data: Struct
     var structIndex: Int
     
@@ -18,7 +18,7 @@ struct CourseRow: View {
         HStack {
             VStack {
                 RowHeader(title: $data.lesson, level: $data.level)
-                RowDetail(desc: $data.description, progress: $data.percentage)
+                RowDetail(title: $data.lesson, desc: $data.description, progress: $data.percentage)
             }
             
             Spacer()
@@ -38,6 +38,7 @@ struct CourseRow: View {
 
 struct RowDetail: View {
     
+    @Binding var title: String
     @Binding var desc: String
     @Binding var progress: Float
     
@@ -48,11 +49,17 @@ struct RowDetail: View {
                 //                ProgressBar(value: 0.2)
                 //                    .frame(width: 150, alignment: .leading)
                 Text(desc)
-                    .font(.footnote)
+                    .fontWeight(.light)
                     .multilineTextAlignment(.leading)
+                if #available(iOS 14.0, *) {
+                    ProgressView(value: progress, total: 100).progressViewStyle(LinearProgressViewStyle(tint: title == "LA PILA" ? Color.blue : (title == "LA FILA" ? Color.green : Color.orange)))
+                } else {
+                    // Fallback on earlier versions
+                }
             }
             
             Spacer()
+            
         }
         .padding(.vertical, 5)
     }
@@ -69,10 +76,13 @@ struct RowHeader: View {
         
         HStack {
             Text(title)
-                .font(.system(size: 15))
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontWeight(.light)
+                .font(.system(size: 22))
+                .padding(5)
+                .background(title == "LA PILA" ? Color.blue : (title == "LA FILA" ? Color.green : Color.orange))
+                .foregroundColor(.white)
             Spacer()
-            Text(level).font(.system(size: 10))
+            Text(level).italic().fontWeight(.light).font(.system(size: 14))
         }
     }
 }

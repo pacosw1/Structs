@@ -17,20 +17,12 @@
             "text": "Una pila es una estructura de datos lineal que cumple con un orden específico en el que las operaciones son realizadas.",
             "animation": "",
             "completed": false,
-            "isAnimated": true,
+            "isAnimated": false,
             "duration": 0
           },
           {
             "id": 2,
             "text": "Existen muchos ejemplos de la vida cotidiana, como una pila de platos o libros. En esta todos los platos están apilados uno sobre otro.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "",
             "animation": "plates-image",
             "completed": false,
             "isAnimated": false,
@@ -265,48 +257,48 @@
         {
           "id": 1,
           "question": "Las pilas siguen el orden",
+          "image": "",
+          "correct_answer": 2,
           "answers": [
             {
               "id": 1,
-              "answer": "FIFO",
-              "isCorrect": false
+              "answer": "FIFO"
             },
             {
               "id": 2,
-              "answer": "LIFO",
-              "isCorrect": true
+              "answer": "LIFO"
             }
           ]
         },
         {
           "id": 2,
           "question": "Todas las operaciones en una pila suceden del mismo lado.",
+          "image": "",
+          "correct_answer": 1,
           "answers": [
             {
               "id": 1,
-              "answer": "Verdadero",
-              "isCorrect": true
+              "answer": "Verdadero"
             },
             {
               "id": 2,
-              "answer": "Falso",
-              "isCorrect": false
+              "answer": "Falso"
             }
           ]
         },
         {
           "id": 3,
           "question": "Un ejemplo de una pila es",
+          "image": "",
+          "correct_answer": 1,
           "answers": [
             {
               "id": 1,
-              "answer": "La fila del supermercado",
-              "isCorrect": false
+              "answer": "La fila del supermercado"
             },
             {
               "id": 2,
-              "answer": "Libros apilados uno sobre otro",
-              "isCorrect": true
+              "answer": "Libros apilados uno sobre otro"
             }
           ]
         }
@@ -314,7 +306,7 @@
     }
   },
   {
-    "id": 1,
+    "id": 2,
     "lesson": "LA FILA",
     "percentage": 0.0,
     "description": "Seguro te gustará esta estructura porque, aunque no lo creas, ya tienes mucha experiencia usándola en tu vida cotidiana.",
@@ -641,49 +633,53 @@
       "questions": [
         {
           "id": 1,
-          "question": "Las pilas siguen el orden",
+          "question": "Para completar el espacio en blanco hace falta:",
+          "image": "queue_front_question",
+          "correct_answer": 1,
           "answers": [
             {
               "id": 1,
-              "answer": "FIFO",
-              "isCorrect": false
+              "answer": "this.items[0]"
             },
             {
               "id": 2,
-              "answer": "LIFO",
-              "isCorrect": true
+              "answer": "this.items[this.count]"
+            },
+            {
+              "id": 3,
+              "answer": "this.items[this.count-1]"
             }
           ]
         },
         {
           "id": 2,
-          "question": "Todas las operaciones en una pila suceden del mismo lado.",
+          "question": "Las filas priorizadas siguen el orden FIFO.",
+          "image": "",
+          "correct_answer": 2,
           "answers": [
             {
               "id": 1,
-              "answer": "Verdadero",
-              "isCorrect": true
+              "answer": "Verdadero"
             },
             {
               "id": 2,
-              "answer": "Falso",
-              "isCorrect": false
+              "answer": "Falso"
             }
           ]
         },
         {
           "id": 3,
-          "question": "Un ejemplo de una pila es",
+          "question": "La línea que hace falta en la función es",
+          "image": "queue_enqueue_question",
+          "correct_answer": 1,
           "answers": [
             {
               "id": 1,
-              "answer": "La fila del supermercado",
-              "isCorrect": false
+              "answer": "this.count -= 1"
             },
             {
               "id": 2,
-              "answer": "Libros apilados uno sobre otro",
-              "isCorrect": true
+              "answer": "this.count += 1"
             }
           ]
         }
@@ -697,56 +693,439 @@
     "percentage": 0.0,
     "description": "Prepárate para aprender uno de los temas más difíciles para el estudiante novato, pero sin duda, con de gran utilidad.",
     "level": "Hard",
-    "topics": [],
+    "topics": [
+      {
+        "id": 1,
+        "name": "¿Qué es una lista encadenada?",
+        "completed": false,
+        "flashcards": [
+          {
+            "id": 1,
+            "text": "Una lista encadenada es una estructura de datos lineal que cumple en donde los datos no están guardados en memoria contigua, si no que cada elemento tiene un apuntador al siguiente.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 2,
+            "text": "Básicamente, es una lista de nodos donde cada uno tiene un campo para guardar la información del nodo y otro campo con la referencia que apunta al siguiente elemento (usualmente conocido como 'next', que significa siguiente en inglés).",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 3,
+            "text": "Conocer el último nodo es muy sencillo ya que este tiene una referencia a nulo, que significa que ya no hay más elementos en la lista. Este se conoce como 'tail' o cola por su nombre en inglés.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 4,
+            "text": "",
+            "animation": "IMAGE of simple linked list",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 5,
+            "text": "Mientras que la entrada de una lista se conoce como 'head' (cabeza, por su nombre en inglés). Esta no es un nodo separado, mas bien es solo una referencia al primer nodo de la lista.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 6,
+            "text": "Como te podrás imaginar, una lista encadenada vacía consiste únicamente de esta 'head' con una referencia a nulo.",
+            "animation": "IMAGE of empty linked list",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Tipos de listas encadenadas",
+        "completed": false,
+        "flashcards": [
+          {
+            "id": 1,
+            "text": "Las listas encadenadas son unas de las estructuras más usadas en la programación. La lista encadenada que analizamos en el tema anterior es solo un tipo de esta estructura conocida comúnmente como 'lista simplemente encadenada'.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 2,
+            "text": "Los otros dos tipos de listas encadenadas se conocen como 'lista doblemente encadenada' y 'lista encadenada circular'. Ambas tienen la misma estructura que la lista simple pero con adiciones.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 3,
+            "text": "La 'lista doblemente encadenada' además de tener el dato del nodo y el apuntador al siguiente nodo tiene un apuntador al nodo anterior.",
+            "animation": "IMAGE of doubly linked list",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 4,
+            "text": "La 'lista encadenada circular', como te podrás imaginar, solo tiene una diferencia con la lista simple. Esta es que el último elemento de la lista no apunta a nulo si no al primer elemento de la lista (el 'head').",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 5,
+            "text": "",
+            "animation": "IMAGE of circular linked list",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Implementación en JavaScript",
+        "completed": false,
+        "flashcards": [
+          {
+            "id": 1,
+            "text": "En cualquier lenguaje de programación las listas encadenadas pueden ser implementadas pero, debido a que son distintas que un arreglo, requieren un poco más de esfuerzo para crearlas desde cero. Hoy veremos cómo podemos hacer esto con JavaScript.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 2,
+            "text": "Para comenzar necesitaremos dos clases base: una para el nodo y otro para la lista en si.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 3,
+            "text": "Debido a que estamos creando una lista simplemente encadenada nuestro nodo solo necesita dos propiedades: una para guardar el dato y otra para guardar la referencia o el apuntador al siguiente nodo.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 4,
+            "text": "Para facilitar la creación del nodo inicializaremos el valor del 'next' (la referencia al siguiente nodo) con el valor recibido en el constructor pero tendremos el nulo como respaldo.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 5,
+            "text": "",
+            "animation": "linked_list_node",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 6,
+            "text": "Ya que tenemos la clase para crear nuestro nodo solo nos falta aquella para crear la lista encadenada. Esta solo requiere de tres propiedades o atributos: el tamaño de la lista, el nodo inicial (o 'head') y el último nodo ('tail').",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 7,
+            "text": "Como habrás supuesto, el tamaño comienza en 0, pues estamos creando una lista vacía. Mientras que ambos nodos, el 'head' y 'tail' se inicializan en nulo.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 8,
+            "text": "",
+            "animation": "linked_list",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 9,
+            "text": "A pesar de que las listas encadenadas requieren de más código, por sus características únicas, ¡es así de fácil! En los siguientes temas veremos otras funciones importantes para manipular nuestras listas.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Agregar a una lista encadenada",
+        "completed": false,
+        "flashcards": [
+          {
+            "id": 1,
+            "text": "Debido a las características de las listas encadenadas, donde cada nodo tiene un apuntador al siguiente, estas no siguen un orden específico como las pilas o filas. Es decir, podemos agregar y eliminar elementos de cualquier lado de la lista (del inicio o el final).",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 2,
+            "text": "Por lo que, para agregar a una lista podemos hacerlo al principio de la lista (con una función conocida como 'prepend', que se traduce como 'anteponer' del inglés) o al final de la lista (que se conoce como 'append').",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 3,
+            "text": "Implementaremos la función 'prepend' de manera sencilla: lo más importante que debemos hacer es crear un nuevo nodo con el valor que recibimos de parámetro y asignarle como 'next' el primer elemento de la lista (el 'head').",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 4,
+            "text": "",
+            "animation": "ANIMATION of prepend",
+            "completed": false,
+            "isAnimated": true,
+            "duration": 0
+          },
+          {
+            "id": 5,
+            "text": "Recordemos que nuestra lista tiene tres atributos: el tamaño, el 'head' y el 'tail'. Como agregamos un nuevo nodo debemos incrementar el tamaño de nuestra lista y decirle que su 'head' es ahora este nuevo nodo.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 6,
+            "text": "Por último, debemos revisar si nuestra lista ya tiene elementos, que podemos hacer revisando si el 'tail' está vacío. Y si lo está, debemos asignarle el nuevo nodo. De forma que nuestra lista tendría solo 1 elemento, que es al mismo tiempo el 'head' y el 'tail'.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 7,
+            "text": "",
+            "animation": "linked_list_prepend",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Eliminar de una lista encadenada",
+        "completed": false,
+        "flashcards": [
+          {
+            "id": 1,
+            "text": "Una de las funciones necesarias para cualquier estructura de datos es eliminar elementos. Debido a la estructura de las listas encadenadas eliminar el primer o último elemento son funciones simples que no requieren de mucha lógica.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 2,
+            "text": "Sin embargo, para poder eliminar un elemento determinado de la lista, debemos agregar funcionalidad adicional ya que, para obtener un elemento determinado, debemos recorrer la lista elemento por elemento.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 3,
+            "text": "Debido a esto, por simplicidad, nuestra función 'deleteHead' (o 'borrar head' en español) se encargará de eliminar el primer elemento de la lista. Para lograr esto solo necesitamos 'desligar' nuestro primer elemento, es decir, decirle a nuestro 'head' de la lista que será el siguiente elemento (el 'next').",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 4,
+            "text": "Pero, antes de hacer esto debemos realizar algunas validaciones: primero revisar que la lista no esté vacía (que exista un 'head') y que tenga al menos otro elemento (que el 'next' no esté vacío).",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 5,
+            "text": "Es necesario revisar esto ya que, después de que eliminemos el primer elemento, debemos actualizar el 'head' y 'tail' de nuestra lista. Y, además, debemos decrementar el tamaño de nuestra lista.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 6,
+            "text": "",
+            "animation": "ANIMATION of deleteHead",
+            "completed": false,
+            "isAnimated": true,
+            "duration": 0
+          },
+          {
+            "id": 7,
+            "text": "En este caso, si también queremos regresar el elemento, como hacíamos en las pilas y filas, debemos guardarlo antes de perder el apuntador y regresarlo.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 8,
+            "text": "",
+            "animation": "linked_list_delete_head",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Más funciones",
+        "completed": false,
+        "flashcards": [
+          {
+            "id": 1,
+            "text": "Existen muchas funciones útiles para manejar y manipular listas encadenadas, como encontrar elementos, verificar si la lista uncluye un elemento en específico, imprimir todos los elementos e incluso convertir la lista a un arreglo.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 2,
+            "text": "Para ahondar más en el tema implementaremos las funciones para imprimir una lista encadenada llamada 'print' y otra para convertir a un arreglo llamada 'toArray'.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 3,
+            "text": "La función print() lo único que debe hacer es recorrer nuestra lista encadenada e imprimir en la consola. La manera de recorrer es creando una variable auxiliar que comenzará con el valor del 'head' e irá tomando el valor de 'next' en cada iteración.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 4,
+            "text": "",
+            "animation": "linked_list_print_list",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 5,
+            "text": "toArray() es la función que convierte una lista encadenada en un arreglo. Al igual que nuestra función de print() debemos recorrer nuestra lista y, a diferencia de esta, agrega ya sea el valor o el nodo al arreglo.",
+            "animation": "",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          },
+          {
+            "id": 6,
+            "text": "Para esta función queremos recibir como parámetro un bool que nos indique si queremos que nuestro arreglo guarde el nodo o solo el valor del nodo.",
+            "animation": "linked_list_to_array",
+            "completed": false,
+            "isAnimated": false,
+            "duration": 0
+          }
+        ]
+      }
+    ],
     "quiz": {
       "id": 1,
       "completed": false,
       "questions": [
         {
           "id": 1,
-          "question": "Las pilas siguen el orden",
+          "question": "No es un tipo de lista encadenada",
+          "image": "",
+          "correct_answer": 2,
           "answers": [
             {
               "id": 1,
-              "answer": "FIFO",
-              "isCorrect": false
+              "answer": "Lista doblemente encadenada"
             },
             {
               "id": 2,
-              "answer": "LIFO",
-              "isCorrect": true
+              "answer": "Lista triplemente encadenada"
+            },
+            {
+              "id": 3,
+              "answer": "Lista simplemente encadenada"
             }
           ]
         },
         {
           "id": 2,
-          "question": "Todas las operaciones en una pila suceden del mismo lado.",
+          "question": "Para completar la función de printList() falta:",
+          "image": "print_list_question",
+          "correct_answer": 1,
           "answers": [
             {
               "id": 1,
-              "answer": "Verdadero",
-              "isCorrect": true
+              "answer": "this.front"
             },
             {
               "id": 2,
-              "answer": "Falso",
-              "isCorrect": false
+              "answer": "this.top"
+            },
+            {
+              "id": 3,
+              "answer": "this.head"
             }
           ]
         },
         {
           "id": 3,
-          "question": "Un ejemplo de una pila es",
+          "question": "Los tres atributos o propiedades de la lista encadenada son",
+          "image": "",
+          "correct_answer": 1,
           "answers": [
             {
               "id": 1,
-              "answer": "La fila del supermercado",
-              "isCorrect": false
+              "answer": "Tamaño y nodo inicial"
             },
             {
               "id": 2,
-              "answer": "Libros apilados uno sobre otro",
-              "isCorrect": true
+              "answer": "Nodo inicial y nodo final"
+            },
+            {
+              "id": 3,
+              "answer": "Tamaño, nodo inicial y nodo final"
             }
           ]
         }
