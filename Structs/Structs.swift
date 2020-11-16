@@ -35,6 +35,8 @@ struct Quiz: Codable, Identifiable {
 struct Question: Codable, Identifiable {
     var id: Int
     let question: String
+    let image: String
+    let correct_answer: Int
     let answers: [Answer]
 }
 
@@ -42,7 +44,6 @@ struct Question: Codable, Identifiable {
 struct Answer: Codable, Identifiable {
     var id: Int
     let answer: String
-    let isCorrect: Bool
 }
 
 // MARK: - Topic
