@@ -1,756 +1,1144 @@
 [
-  {
-    "id": 1,
-    "lesson": "LA PILA",
-    "percentage": 0.0,
-    "description": "Una de las estructuras más divertidas y útiles que aprenderás en tu vida como programador.",
-    "level": "Easy",
-    "completed": false,
-    "topics": [
-      {
+    {
+      "id": 1,
+      "lesson": "LA PILA",
+      "percentage": 0.0,
+      "description": "Una de las estructuras más divertidas y útiles que aprenderás en tu vida como programador.",
+      "level": "Easy",
+      "completed": false,
+      "topics": [
+        {
+          "id": 1,
+          "name": "¿Qué es una pila?",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Una pila es una estructura de datos lineal que cumple con un orden específico en el que las operaciones son realizadas.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "Existen muchos ejemplos de la vida cotidiana, como una pila de platos o libros. En esta todos los platos están apilados uno sobre otro.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "",
+              "animation": "plates-image",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Principio LIFO",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Las pilas cumplen con un orden específico comúnmente conocido como LIFO (por sus siglas en inglés). Esto significa que el último que entra es el primero que sale (Last In First Out).",
+              "animation": "LIFO",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 11
+            },
+            {
+              "id": 2,
+              "text": "El orden LIFO quiere decir que todas las operaciones ocurren de un mismo lado. Como veíamos el ejemplo de los platos, si queremos agregar otro plato a la pila lo tenemos que hacer por arriba. Y si queremos sacar uno también lo hacemos por arriba.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "",
+              "animation": "plates",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 4
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Implementación en JavaScript",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "En cualquier lenguaje de programación las pilas pueden ser implementadas como un arreglo (una lista de datos) o una lista encadenada (una lista de datos donde cada elemento tiene un apuntador al siguiente elemento de la lista).",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "Haremos la implementación ahora con un arreglo en JavaScript, iniciando con la declaración de la estructura de dato.",
+              "animation": "stack",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Como te habrás dado cuenta, lo único que realiza el código es: inicializar un arreglo vacío y el número de elementos a 0.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "Fácilmente podríamos agregarle una función a nuestra clase para obtener el tamaño de nuestra pila haciendo lo siguiente",
+              "animation": "stack_length",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "Esto es todo lo que se necesita para crear una pila, ¡fácil! En el siguiente tema veremos como agregar y eliminar elementos en la pila.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Agregar a una pila",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Lo único que tenemos hasta ahora es nuestra clase de pila que se ve algo así",
+              "animation": "empty_stack",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "Si queremos agregarle un elemento lo único que debemos hacer es agregarlo al arreglo en la posición del número de elementos. Esta operación se conoce comúnmente como push (que significa agregar en inglés).",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Además, debemos decirle a nuestro contador de elementos que ya agregamos un elemento. Por lo que la función final sería",
+              "animation": "stack_push",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "De esta forma, lo único que estamos haciendo es agregar un elemento al final de nuestro arreglo.",
+              "animation": "emptying_stack",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 7
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Eliminar de una pila",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Debido a que las pilas siguen el orden LIFO, el primer elemento que sale de la pila es el último que se agregó. Esto quiere decir que ese es aquel que se elimina primero.",
+              "animation": "pop2",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 1
+            },
+            {
+              "id": 2,
+              "text": "Nuestra función se llamará pop, comúnmente conocida así por su nombre en inglés. Además de eliminar el último elemento en entrar a la pila, regresará este elemento antes de removerlo. Esta es una operación muy útil que nos permite ver cuál era el último elemento de nuestra pila.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Para poder eliminar ese elemento debemos primero revisar que la pila tiene elementos. De otra forma estaríamos tratando de eliminar algo que no existe.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "Una función muy útil de JavaScript para hacer esto es el pop de los arreglos, la cual consiste en eliminar el último elemento del arreglo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "De forma que lo último que nos falta es disminuir nuestro contador de elementos en 1.",
+              "animation": "stack_pop",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Más funciones",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Otras funciones útiles para manejar o editar pilas son: isEmpty(), peek() y print().",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "isEmpty() consiste en, por su nombre en inglés, verificar si la pila está vacía. Esto se logra fácilmente revisando la longitud de nuestro arreglo de datos.",
+              "animation": "stack_isEmpty",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "peek() se parece mucho a nuestra función anterior de pop(), donde regresábamos el último elemento en entrar a la pila y lo eliminábamos. La diferencia es que ahora solo queremos regresar el último elemento, sin removerlo de nuestra pila.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "De su nombre en inglés que significa ojear, la implementación de peek() es así de sencilla.",
+              "animation": "stack_peek",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "print() realiza lo que su nombre nos dice en inglés: imprimir los elementos de nuestra pila. Debido a que, como ya hemos visto, las pilas siguen el orden LIFO, imprimiremos los elementos del último que entró a la pila hasta el primero.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "Para hacer esto debemos crear una variable temporal que nos diga cuántos elementos tiene nuestra pila e iterar por cada elemento.",
+              "animation": "stack_print",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        }
+      ],
+      "quiz": {
         "id": 1,
-        "name": "¿Qué es una pila?",
         "completed": false,
-        "flashcards": [
+        "questions": [
           {
             "id": 1,
-            "text": "Una pila es una estructura de datos lineal que cumple con un orden específico en el que las operaciones son realizadas.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 0
+            "question": "Las pilas siguen el orden",
+            "image": "",
+            "correct_answer": 2,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "FIFO"
+              },
+              {
+                "id": 2,
+                "answer": "LIFO"
+              }
+            ]
           },
           {
             "id": 2,
-            "text": "Existen muchos ejemplos de la vida cotidiana, como una pila de platos o libros. En esta todos los platos están apilados uno sobre otro.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
+            "question": "Todas las operaciones en una pila suceden del mismo lado.",
+            "image": "",
+            "correct_answer": 1,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "Verdadero"
+              },
+              {
+                "id": 2,
+                "answer": "Falso"
+              }
+            ]
           },
           {
             "id": 3,
-            "text": "",
-            "animation": "plates-image",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Principio LIFO",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Las pilas cumplen con un orden específico comúnmente conocido como LIFO (por sus siglas en inglés). Esto significa que el último que entra es el primero que sale (Last In First Out).",
-            "animation": "LIFO",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 11
-          },
-          {
-            "id": 2,
-            "text": "El orden LIFO quiere decir que todas las operaciones ocurren de un mismo lado. Como veíamos el ejemplo de los platos, si queremos agregar otro plato a la pila lo tenemos que hacer por arriba. Y si queremos sacar uno también lo hacemos por arriba.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "",
-            "animation": "plates",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 4
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Implementación en JavaScript",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "En cualquier lenguaje de programación las pilas pueden ser implementadas como un arreglo (una lista de datos) o una lista encadenada (una lista de datos donde cada elemento tiene un apuntador al siguiente elemento de la lista).",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 2,
-            "text": "Haremos la implementación ahora con un arreglo en JavaScript, iniciando con la declaración de la estructura de dato.",
-            "animation": "stack",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Como te habrás dado cuenta, lo único que realiza el código es: inicializar un arreglo vacío y el número de elementos a 0.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "Fácilmente podríamos agregarle una función a nuestra clase para obtener el tamaño de nuestra pila haciendo lo siguiente",
-            "animation": "stack_length",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "Esto es todo lo que se necesita para crear una pila, ¡fácil! En el siguiente tema veremos como agregar y eliminar elementos en la pila.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Agregar a una pila",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Lo único que tenemos hasta ahora es nuestra clase de pila que se ve algo así",
-            "animation": "empty_stack",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 2,
-            "text": "Si queremos agregarle un elemento lo único que debemos hacer es agregarlo al arreglo en la posición del número de elementos. Esta operación se conoce comúnmente como push (que significa agregar en inglés).",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Además, debemos decirle a nuestro contador de elementos que ya agregamos un elemento. Por lo que la función final sería",
-            "animation": "stack_push",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "De esta forma, lo único que estamos haciendo es agregar un elemento al final de nuestro arreglo.",
-            "animation": "emptying_stack",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 7
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Eliminar de una pila",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Debido a que las pilas siguen el orden LIFO, el primer elemento que sale de la pila es el último que se agregó. Esto quiere decir que ese es aquel que se elimina primero.",
-            "animation": "pop2",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 1
-          },
-          {
-            "id": 2,
-            "text": "Nuestra función se llamará pop, comúnmente conocida así por su nombre en inglés. Además de eliminar el último elemento en entrar a la pila, regresará este elemento antes de removerlo. Esta es una operación muy útil que nos permite ver cuál era el último elemento de nuestra pila.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Para poder eliminar ese elemento debemos primero revisar que la pila tiene elementos. De otra forma estaríamos tratando de eliminar algo que no existe.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "Una función muy útil de JavaScript para hacer esto es el pop de los arreglos, la cual consiste en eliminar el último elemento del arreglo.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "De forma que lo último que nos falta es disminuir nuestro contador de elementos en 1.",
-            "animation": "stack_pop",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "name": "Más funciones",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Otras funciones útiles para manejar o editar pilas son: isEmpty(), peek() y print().",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 2,
-            "text": "isEmpty() consiste en, por su nombre en inglés, verificar si la pila está vacía. Esto se logra fácilmente revisando la longitud de nuestro arreglo de datos.",
-            "animation": "stack_isEmpty",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "peek() se parece mucho a nuestra función anterior de pop(), donde regresábamos el último elemento en entrar a la pila y lo eliminábamos. La diferencia es que ahora solo queremos regresar el último elemento, sin removerlo de nuestra pila.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "De su nombre en inglés que significa ojear, la implementación de peek() es así de sencilla.",
-            "animation": "stack_peek",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "print() realiza lo que su nombre nos dice en inglés: imprimir los elementos de nuestra pila. Debido a que, como ya hemos visto, las pilas siguen el orden LIFO, imprimiremos los elementos del último que entró a la pila hasta el primero.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 6,
-            "text": "Para hacer esto debemos crear una variable temporal que nos diga cuántos elementos tiene nuestra pila e iterar por cada elemento.",
-            "animation": "stack_print",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
+            "question": "Un ejemplo de una pila es",
+            "image": "",
+            "correct_answer": 1,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "La fila del supermercado"
+              },
+              {
+                "id": 2,
+                "answer": "Libros apilados uno sobre otro"
+              }
+            ]
           }
         ]
       }
-    ],
-    "quiz": {
-      "id": 1,
+    },
+    {
+      "id": 2,
+      "lesson": "LA FILA",
+      "percentage": 0.0,
+      "description": "Seguro te gustará esta estructura porque, aunque no lo creas, ya tienes mucha experiencia usándola en tu vida cotidiana.",
+      "level": "Medium",
       "completed": false,
-      "questions": [
+      "topics": [
         {
           "id": 1,
-          "question": "Las pilas siguen el orden",
-          "answers": [
+          "name": "¿Qué es una fila?",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "FIFO",
-              "isCorrect": false
+              "text": "Una fila es una estructura de datos lineal que cumple con un orden específico en el que las operaciones son realizadas.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
               "id": 2,
-              "answer": "LIFO",
-              "isCorrect": true
+              "text": "Existen muchos ejemplos de la vida cotidiana, como una fila de estudiantes en una cafetería. En esta todos están esperando a ser atendidos uno después de otro.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "",
+              "animation": "cafeteria-image",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             }
           ]
         },
         {
           "id": 2,
-          "question": "Todas las operaciones en una pila suceden del mismo lado.",
-          "answers": [
+          "name": "Principio FIFO",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "Verdadero",
-              "isCorrect": true
+              "text": "Las filas cumplen con un orden específico comúnmente conocido como FIFO (por sus siglas en inglés). Esto significa que el primer elemento que entra es el primero que sale (First In First Out).",
+              "animation": "FIFO",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 12
             },
             {
               "id": 2,
-              "answer": "Falso",
-              "isCorrect": false
+              "text": "A continuación verás un ejemplo sencillo de como funcionan las filas con una analogía de la vida real.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Como veíamos el ejemplo de estudiantes haciendo fila en la cafetería, el primero en llegar a la fila es el primero en ser atendido. Todos los que lleguen después de él se ordenan en la fila.",
+              "animation": "cafeteria",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 5
             }
           ]
         },
         {
           "id": 3,
-          "question": "Un ejemplo de una pila es",
-          "answers": [
+          "name": "Implementación en JavaScript",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "La fila del supermercado",
-              "isCorrect": false
+              "text": "En cualquier lenguaje de programación las filas pueden ser implementadas como un arreglo (una lista de datos), una lista encadenada o incluso una pila (la estructura de datos que analizamos anteriormente).",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
               "id": 2,
-              "answer": "Libros apilados uno sobre otro",
-              "isCorrect": true
+              "text": "Haremos la implementación ahora con un arreglo en JavaScript, iniciando con la declaración de la estructura de dato.",
+              "animation": "queue",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Como te habrás dado cuenta, al igual que como hicimos con la pila, lo único que realiza el código es: inicializar un arreglo vacío y el número de elementos a 0.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "Fácilmente podríamos agregarle una función a nuestra clase para obtener el tamaño de nuestra fila haciendo lo siguiente",
+              "animation": "queue_count",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "Y con estas simples lineas hemos creado nuestra primera fila, ¡fácil! Como con todas las estructuras de datos, podemos agregar y eliminar elementos de ella. Veremos esto en nuestro siguiente tema.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Enqueue (agregar a una fila)",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Lo único que tenemos hasta ahora es nuestra clase de fila que se ve algo así",
+              "animation": "empty_queue",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "Si queremos agregarle un elemento, comúnmente lo referimos como 'enqueue' (por su nombre en inglés que significa 'poner en la fila'), lo único que debemos hacer es agregarlo al arreglo en la posición del número de elementos, que es la última posición.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Además, debemos decirle a nuestro contador de elementos que ya agregamos un elemento. Por lo que la función final sería",
+              "animation": "queue_enqueue",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "De esta forma, lo único que estamos haciendo es agregar un elemento al final de nuestro arreglo.",
+              "animation": "enqueueing",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 2
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Dequeue (eliminar de una fila)",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Debido a que las filas siguen el orden FIFO, el primer elemento que sale de la fila es el primero que se agregó, una función que conocemos como 'dequeue' (por us nombre en inglés que significa 'sacar de la fila').",
+              "animation": "dequeueing",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 2
+            },
+            {
+              "id": 2,
+              "text": "Para poder 'dequeue' un elemento debemos no solo eliminarlo de la fila si no regresarlo para que el usuario vea cuál elemento está removiendo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Para poder eliminar ese elemento debemos primero revisar que la fila no esté vacía, ya que, de otra forma estaríamos tratando de eliminar algo que no existe.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "Una función muy útil de JavaScript para hacer esto se llama 'shift', la cual elimina el primer elemento del arreglo (aquel en la posición 0) y lo regresa.",
+              "animation": "ANIMATION of shift ARRAY",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "De forma que lo único que nos falta es disminuir nuestro contador de elementos en 1.",
+              "animation": "queue_dequeue",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Más funciones",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Otras funciones útiles para manejar o editar filas son: isEmpty(), front() y print().",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "isEmpty() consiste en, por su nombre en inglés, verificar si la fila está vacía. Esto se logra fácilmente revisando la longitud de nuestro arreglo de datos, al igual que hicimos con la pila.",
+              "animation": "queue_isEmpty",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "front() o también conocida como peek() se parece mucho a nuestra función anterior de dequeue(), donde eliminábamos el primer elemento en ingresar a la fila y lo regresábamos. La diferencia es que ahora solo queremos regresar el último elemento, sin removerlo de nuestra fila.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "La implementación de esta función es así de fácil",
+              "animation": "queue_front",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "print() realiza lo que su nombre nos dice en inglés: imprimir los elementos de nuestra fila. Debido a que, como ya hemos visto, las pilas siguen el orden FIFO, imprimiremos los elementos en el orden en el que fueron llegando.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "Para hacer esto debemos crear una variable temporal que nos diga cuántos elementos tiene nuestra fila e iterar por cada elemento.",
+              "animation": "queue_print",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Diferencias con la fila priorizada",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Una implementación alternativa a la fila es la fila priorizada. Como su nombre lo dice, es una fila donde los elementos están priorizados en base a una condición especificada por el usuario.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "Estas las podemos ver en sistemas que mantienen una jerarquía, como la impresora en un departamento de una universidad. Primero se imprimen aquellos documentos del departamento, después de los profesores y al final de los estudiantes.",
+              "animation": "IMAGE of school library",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Existen distintas maneras de implementar una fila priorizada pero, por ahora, solo analizaremos algunas diferencias a nivel teórico.",
+              "animation": "IMAGE of differences",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "La única diferencia con la fila es que en la fila priorizada los elementos tienen una prioridad asociada a ellos y, por lo tanto, no siguen el orden FIFO, si no que salen de acuerdo a ese orden de prioridad.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "Esto tiene un impacto principalmente en las funciones de obtener los elementos como dequeue() (eliminar) y front() o peek(). Al agregar los elementos se realiza de igual forma que en la fila, mientras que la lógica para sacar un elemento se implementa en estas dos funciones.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "Para sacar un elemento de una fila priorizada primero debemos iterar sobre ella para encontrar aquel que tiene la prioridad más alta. Para ambas funciones regresamos ese elemento y, además, para dequeue() lo eliminamos.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 7,
+              "text": "Si dos elementos cuentan con la misma prioridad, entonces se escoge el que llegó primero a la fila.",
+              "animation": "ANIMATION of priority queue",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             }
           ]
         }
-      ]
-    }
-  },
-  {
-    "id": 1,
-    "lesson": "LA FILA",
-    "percentage": 0.0,
-    "description": "Seguro te gustará esta estructura porque, aunque no lo creas, ya tienes mucha experiencia usándola en tu vida cotidiana.",
-    "level": "Medium",
-    "completed": false,
-    "topics": [
-      {
+      ],
+      "quiz": {
         "id": 1,
-        "name": "¿Qué es una fila?",
         "completed": false,
-        "flashcards": [
+        "questions": [
           {
             "id": 1,
-            "text": "Una fila es una estructura de datos lineal que cumple con un orden específico en el que las operaciones son realizadas.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
+            "question": "Para completar el espacio en blanco hace falta:",
+            "image": "queue_front_question",
+            "correct_answer": 1,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "this.items[0]"
+              },
+              {
+                "id": 2,
+                "answer": "this.items[this.count]"
+              },
+              {
+                "id": 3,
+                "answer": "this.items[this.count-1]"
+              }
+            ]
           },
           {
             "id": 2,
-            "text": "Existen muchos ejemplos de la vida cotidiana, como una fila de estudiantes en una cafetería. En esta todos están esperando a ser atendidos uno después de otro.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
+            "question": "Las filas priorizadas siguen el orden FIFO.",
+            "image": "",
+            "correct_answer": 2,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "Verdadero"
+              },
+              {
+                "id": 2,
+                "answer": "Falso"
+              }
+            ]
           },
           {
             "id": 3,
-            "text": "",
-            "animation": "cafeteria-image",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Principio FIFO",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Las filas cumplen con un orden específico comúnmente conocido como FIFO (por sus siglas en inglés). Esto significa que el primer elemento que entra es el primero que sale (First In First Out).",
-            "animation": "FIFO",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 12
-          },
-          {
-            "id": 2,
-            "text": "A continuación verás un ejemplo sencillo de como funcionan las filas con una analogía de la vida real.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Como veíamos el ejemplo de estudiantes haciendo fila en la cafetería, el primero en llegar a la fila es el primero en ser atendido. Todos los que lleguen después de él se ordenan en la fila.",
-            "animation": "cafeteria",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 5
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Implementación en JavaScript",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "En cualquier lenguaje de programación las filas pueden ser implementadas como un arreglo (una lista de datos), una lista encadenada o incluso una pila (la estructura de datos que analizamos anteriormente).",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 2,
-            "text": "Haremos la implementación ahora con un arreglo en JavaScript, iniciando con la declaración de la estructura de dato.",
-            "animation": "queue",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Como te habrás dado cuenta, al igual que como hicimos con la pila, lo único que realiza el código es: inicializar un arreglo vacío y el número de elementos a 0.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "Fácilmente podríamos agregarle una función a nuestra clase para obtener el tamaño de nuestra fila haciendo lo siguiente",
-            "animation": "queue_count",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "Y con estas simples lineas hemos creado nuestra primera fila, ¡fácil! Como con todas las estructuras de datos, podemos agregar y eliminar elementos de ella. Veremos esto en nuestro siguiente tema.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Enqueue (agregar a una fila)",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Lo único que tenemos hasta ahora es nuestra clase de fila que se ve algo así",
-            "animation": "empty_queue",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 2,
-            "text": "Si queremos agregarle un elemento, comúnmente lo referimos como 'enqueue' (por su nombre en inglés que significa 'poner en la fila'), lo único que debemos hacer es agregarlo al arreglo en la posición del número de elementos, que es la última posición.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Además, debemos decirle a nuestro contador de elementos que ya agregamos un elemento. Por lo que la función final sería",
-            "animation": "queue_enqueue",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "De esta forma, lo único que estamos haciendo es agregar un elemento al final de nuestro arreglo.",
-            "animation": "enqueueing",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 2
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Dequeue (eliminar de una fila)",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Debido a que las filas siguen el orden FIFO, el primer elemento que sale de la fila es el primero que se agregó, una función que conocemos como 'dequeue' (por us nombre en inglés que significa 'sacar de la fila').",
-            "animation": "dequeueing",
-            "completed": false,
-            "isAnimated": true,
-            "duration": 2
-          },
-          {
-            "id": 2,
-            "text": "Para poder 'dequeue' un elemento debemos no solo eliminarlo de la fila si no regresarlo para que el usuario vea cuál elemento está removiendo.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Para poder eliminar ese elemento debemos primero revisar que la fila no esté vacía, ya que, de otra forma estaríamos tratando de eliminar algo que no existe.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "Una función muy útil de JavaScript para hacer esto se llama 'shift', la cual elimina el primer elemento del arreglo (aquel en la posición 0) y lo regresa.",
-            "animation": "ANIMATION of shift ARRAY",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "De forma que lo único que nos falta es disminuir nuestro contador de elementos en 1.",
-            "animation": "queue_dequeue",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "name": "Más funciones",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Otras funciones útiles para manejar o editar filas son: isEmpty(), front() y print().",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 2,
-            "text": "isEmpty() consiste en, por su nombre en inglés, verificar si la fila está vacía. Esto se logra fácilmente revisando la longitud de nuestro arreglo de datos, al igual que hicimos con la pila.",
-            "animation": "queue_isEmpty",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "front() o también conocida como peek() se parece mucho a nuestra función anterior de dequeue(), donde eliminábamos el primer elemento en ingresar a la fila y lo regresábamos. La diferencia es que ahora solo queremos regresar el último elemento, sin removerlo de nuestra fila.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "La implementación de esta función es así de fácil",
-            "animation": "queue_front",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "print() realiza lo que su nombre nos dice en inglés: imprimir los elementos de nuestra fila. Debido a que, como ya hemos visto, las pilas siguen el orden FIFO, imprimiremos los elementos en el orden en el que fueron llegando.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 6,
-            "text": "Para hacer esto debemos crear una variable temporal que nos diga cuántos elementos tiene nuestra fila e iterar por cada elemento.",
-            "animation": "queue_print",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          }
-        ]
-      },
-      {
-        "id": 7,
-        "name": "Diferencias con la fila priorizada",
-        "completed": false,
-        "flashcards": [
-          {
-            "id": 1,
-            "text": "Una implementación alternativa a la fila es la fila priorizada. Como su nombre lo dice, es una fila donde los elementos están priorizados en base a una condición especificada por el usuario.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 2,
-            "text": "Estas las podemos ver en sistemas que mantienen una jerarquía, como la impresora en un departamento de una universidad. Primero se imprimen aquellos documentos del departamento, después de los profesores y al final de los estudiantes.",
-            "animation": "IMAGE of school library",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "Existen distintas maneras de implementar una fila priorizada pero, por ahora, solo analizaremos algunas diferencias a nivel teórico.",
-            "animation": "IMAGE of differences",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 4,
-            "text": "La única diferencia con la fila es que en la fila priorizada los elementos tienen una prioridad asociada a ellos y, por lo tanto, no siguen el orden FIFO, si no que salen de acuerdo a ese orden de prioridad.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "Esto tiene un impacto principalmente en las funciones de obtener los elementos como dequeue() (eliminar) y front() o peek(). Al agregar los elementos se realiza de igual forma que en la fila, mientras que la lógica para sacar un elemento se implementa en estas dos funciones.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 6,
-            "text": "Para sacar un elemento de una fila priorizada primero debemos iterar sobre ella para encontrar aquel que tiene la prioridad más alta. Para ambas funciones regresamos ese elemento y, además, para dequeue() lo eliminamos.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 7,
-            "text": "Si dos elementos cuentan con la misma prioridad, entonces se escoge el que llegó primero a la fila.",
-            "animation": "ANIMATION of priority queue",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
+            "question": "La línea que hace falta en la función es",
+            "image": "queue_enqueue_question",
+            "correct_answer": 1,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "this.count -= 1"
+              },
+              {
+                "id": 2,
+                "answer": "this.count += 1"
+              }
+            ]
           }
         ]
       }
-    ],
-    "quiz": {
-      "id": 1,
+    },
+    {
+      "id": 3,
+      "lesson": "LA LISTA ENCADENADA",
       "completed": false,
-      "questions": [
+      "percentage": 0.0,
+      "description": "Prepárate para aprender uno de los temas más difíciles para el estudiante novato, pero sin duda, con de gran utilidad.",
+      "level": "Hard",
+      "topics": [
         {
           "id": 1,
-          "question": "Las pilas siguen el orden",
-          "answers": [
+          "name": "¿Qué es una lista encadenada?",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "FIFO",
-              "isCorrect": false
+              "text": "Una lista encadenada es una estructura de datos lineal que cumple en donde los datos no están guardados en memoria contigua, si no que cada elemento tiene un apuntador al siguiente.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
               "id": 2,
-              "answer": "LIFO",
-              "isCorrect": true
+              "text": "Básicamente, es una lista de nodos donde cada uno tiene un campo para guardar la información del nodo y otro campo con la referencia que apunta al siguiente elemento (usualmente conocido como 'next', que significa siguiente en inglés).",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Conocer el último nodo es muy sencillo ya que este tiene una referencia a nulo, que significa que ya no hay más elementos en la lista. Este se conoce como 'tail' o cola por su nombre en inglés.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "",
+              "animation": "IMAGE of simple linked list",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "Mientras que la entrada de una lista se conoce como 'head' (cabeza, por su nombre en inglés). Esta no es un nodo separado, mas bien es solo una referencia al primer nodo de la lista.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "Como te podrás imaginar, una lista encadenada vacía consiste únicamente de esta 'head' con una referencia a nulo.",
+              "animation": "IMAGE of empty linked list",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             }
           ]
         },
         {
           "id": 2,
-          "question": "Todas las operaciones en una pila suceden del mismo lado.",
-          "answers": [
+          "name": "Tipos de listas encadenadas",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "Verdadero",
-              "isCorrect": true
+              "text": "Las listas encadenadas son unas de las estructuras más usadas en la programación. La lista encadenada que analizamos en el tema anterior es solo un tipo de esta estructura conocida comúnmente como 'lista simplemente encadenada'.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
               "id": 2,
-              "answer": "Falso",
-              "isCorrect": false
+              "text": "Los otros dos tipos de listas encadenadas se conocen como 'lista doblemente encadenada' y 'lista encadenada circular'. Ambas tienen la misma estructura que la lista simple pero con adiciones.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "La 'lista doblemente encadenada' además de tener el dato del nodo y el apuntador al siguiente nodo tiene un apuntador al nodo anterior.",
+              "animation": "IMAGE of doubly linked list",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "La 'lista encadenada circular', como te podrás imaginar, solo tiene una diferencia con la lista simple. Esta es que el último elemento de la lista no apunta a nulo si no al primer elemento de la lista (el 'head').",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "",
+              "animation": "IMAGE of circular linked list",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             }
           ]
         },
         {
           "id": 3,
-          "question": "Un ejemplo de una pila es",
-          "answers": [
+          "name": "Implementación en JavaScript",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "La fila del supermercado",
-              "isCorrect": false
+              "text": "En cualquier lenguaje de programación las listas encadenadas pueden ser implementadas pero, debido a que son distintas que un arreglo, requieren un poco más de esfuerzo para crearlas desde cero. Hoy veremos cómo podemos hacer esto con JavaScript.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
               "id": 2,
-              "answer": "Libros apilados uno sobre otro",
-              "isCorrect": true
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": 3,
-    "lesson": "LA LISTA ENCADENADA",
-    "completed": false,
-    "percentage": 0.0,
-    "description": "Prepárate para aprender uno de los temas más difíciles para el estudiante novato, pero sin duda, con de gran utilidad.",
-    "level": "Hard",
-    "topics": [],
-    "quiz": {
-      "id": 1,
-      "completed": false,
-      "questions": [
-        {
-          "id": 1,
-          "question": "Las pilas siguen el orden",
-          "answers": [
-            {
-              "id": 1,
-              "answer": "FIFO",
-              "isCorrect": false
+              "text": "Para comenzar necesitaremos dos clases base: una para el nodo y otro para la lista en si.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
-              "id": 2,
-              "answer": "LIFO",
-              "isCorrect": true
+              "id": 3,
+              "text": "Debido a que estamos creando una lista simplemente encadenada nuestro nodo solo necesita dos propiedades: una para guardar el dato y otra para guardar la referencia o el apuntador al siguiente nodo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "Para facilitar la creación del nodo inicializaremos el valor del 'next' (la referencia al siguiente nodo) con el valor recibido en el constructor pero tendremos el nulo como respaldo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "",
+              "animation": "linked_list_node",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "Ya que tenemos la clase para crear nuestro nodo solo nos falta aquella para crear la lista encadenada. Esta solo requiere de tres propiedades o atributos: el tamaño de la lista, el nodo inicial (o 'head') y el último nodo ('tail').",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 7,
+              "text": "Como habrás supuesto, el tamaño comienza en 0, pues estamos creando una lista vacía. Mientras que ambos nodos, el 'head' y 'tail' se inicializan en nulo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 8,
+              "text": "",
+              "animation": "linked_list",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 9,
+              "text": "A pesar de que las listas encadenadas requieren de más código, por sus características únicas, ¡es así de fácil! En los siguientes temas veremos otras funciones importantes para manipular nuestras listas.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             }
           ]
         },
         {
-          "id": 2,
-          "question": "Todas las operaciones en una pila suceden del mismo lado.",
-          "answers": [
+          "id": 4,
+          "name": "Agregar a una lista encadenada",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "Verdadero",
-              "isCorrect": true
+              "text": "Debido a las características de las listas encadenadas, donde cada nodo tiene un apuntador al siguiente, estas no siguen un orden específico como las pilas o filas. Es decir, podemos agregar y eliminar elementos de cualquier lado de la lista (del inicio o el final).",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
               "id": 2,
-              "answer": "Falso",
-              "isCorrect": false
+              "text": "Por lo que, para agregar a una lista podemos hacerlo al principio de la lista (con una función conocida como 'prepend', que se traduce como 'anteponer' del inglés) o al final de la lista (que se conoce como 'append').",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Implementaremos la función 'prepend' de manera sencilla: lo más importante que debemos hacer es crear un nuevo nodo con el valor que recibimos de parámetro y asignarle como 'next' el primer elemento de la lista (el 'head').",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "",
+              "animation": "ANIMATION of prepend",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "Recordemos que nuestra lista tiene tres atributos: el tamaño, el 'head' y el 'tail'. Como agregamos un nuevo nodo debemos incrementar el tamaño de nuestra lista y decirle que su 'head' es ahora este nuevo nodo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "Por último, debemos revisar si nuestra lista ya tiene elementos, que podemos hacer revisando si el 'tail' está vacío. Y si lo está, debemos asignarle el nuevo nodo. De forma que nuestra lista tendría solo 1 elemento, que es al mismo tiempo el 'head' y el 'tail'.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 7,
+              "text": "",
+              "animation": "linked_list_prepend",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             }
           ]
         },
         {
-          "id": 3,
-          "question": "Un ejemplo de una pila es",
-          "answers": [
+          "id": 5,
+          "name": "Eliminar de una lista encadenada",
+          "completed": false,
+          "flashcards": [
             {
               "id": 1,
-              "answer": "La fila del supermercado",
-              "isCorrect": false
+              "text": "Una de las funciones necesarias para cualquier estructura de datos es eliminar elementos. Debido a la estructura de las listas encadenadas eliminar el primer o último elemento son funciones simples que no requieren de mucha lógica.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             },
             {
               "id": 2,
-              "answer": "Libros apilados uno sobre otro",
-              "isCorrect": true
+              "text": "Sin embargo, para poder eliminar un elemento determinado de la lista, debemos agregar funcionalidad adicional ya que, para obtener un elemento determinado, debemos recorrer la lista elemento por elemento.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "Debido a esto, por simplicidad, nuestra función 'deleteHead' (o 'borrar head' en español) se encargará de eliminar el primer elemento de la lista. Para lograr esto solo necesitamos 'desligar' nuestro primer elemento, es decir, decirle a nuestro 'head' de la lista que será el siguiente elemento (el 'next').",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "Pero, antes de hacer esto debemos realizar algunas validaciones: primero revisar que la lista no esté vacía (que exista un 'head') y que tenga al menos otro elemento (que el 'next' no esté vacío).",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "Es necesario revisar esto ya que, después de que eliminemos el primer elemento, debemos actualizar el 'head' y 'tail' de nuestra lista. Y, además, debemos decrementar el tamaño de nuestra lista.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "",
+              "animation": "ANIMATION of deleteHead",
+              "completed": false,
+              "isAnimated": true,
+              "duration": 0
+            },
+            {
+              "id": 7,
+              "text": "En este caso, si también queremos regresar el elemento, como hacíamos en las pilas y filas, debemos guardarlo antes de perder el apuntador y regresarlo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 8,
+              "text": "",
+              "animation": "linked_list_delete_head",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Más funciones",
+          "completed": false,
+          "flashcards": [
+            {
+              "id": 1,
+              "text": "Existen muchas funciones útiles para manejar y manipular listas encadenadas, como encontrar elementos, verificar si la lista uncluye un elemento en específico, imprimir todos los elementos e incluso convertir la lista a un arreglo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 2,
+              "text": "Para ahondar más en el tema implementaremos las funciones para imprimir una lista encadenada llamada 'print' y otra para convertir a un arreglo llamada 'toArray'.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 3,
+              "text": "La función print() lo único que debe hacer es recorrer nuestra lista encadenada e imprimir en la consola. La manera de recorrer es creando una variable auxiliar que comenzará con el valor del 'head' e irá tomando el valor de 'next' en cada iteración.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 4,
+              "text": "",
+              "animation": "linked_list_print_list",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 5,
+              "text": "toArray() es la función que convierte una lista encadenada en un arreglo. Al igual que nuestra función de print() debemos recorrer nuestra lista y, a diferencia de esta, agrega ya sea el valor o el nodo al arreglo.",
+              "animation": "",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
+            },
+            {
+              "id": 6,
+              "text": "Para esta función queremos recibir como parámetro un bool que nos indique si queremos que nuestro arreglo guarde el nodo o solo el valor del nodo.",
+              "animation": "linked_list_to_array",
+              "completed": false,
+              "isAnimated": false,
+              "duration": 0
             }
           ]
         }
-      ]
+      ],
+      "quiz": {
+        "id": 1,
+        "completed": false,
+        "questions": [
+          {
+            "id": 1,
+            "question": "No es un tipo de lista encadenada",
+            "image": "",
+            "correct_answer": 2,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "Lista doblemente encadenada"
+              },
+              {
+                "id": 2,
+                "answer": "Lista triplemente encadenada"
+              },
+              {
+                "id": 3,
+                "answer": "Lista simplemente encadenada"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "question": "Para completar la función de printList() falta:",
+            "image": "print_list_question",
+            "correct_answer": 1,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "this.front"
+              },
+              {
+                "id": 2,
+                "answer": "this.top"
+              },
+              {
+                "id": 3,
+                "answer": "this.head"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "question": "Los tres atributos o propiedades de la lista encadenada son",
+            "image": "",
+            "correct_answer": 1,
+            "answers": [
+              {
+                "id": 1,
+                "answer": "Tamaño y nodo inicial"
+              },
+              {
+                "id": 2,
+                "answer": "Nodo inicial y nodo final"
+              },
+              {
+                "id": 3,
+                "answer": "Tamaño, nodo inicial y nodo final"
+              }
+            ]
+          }
+        ]
+      }
     }
-  }
-]
+  ]
+  
