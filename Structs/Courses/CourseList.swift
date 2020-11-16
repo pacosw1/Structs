@@ -23,7 +23,7 @@ struct CourseList: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("Structs"))
+            .navigationBarTitle(Text("STRUCTS"))
             .onAppear(perform: {
                 structData = loadJSON("data.json")
             })
