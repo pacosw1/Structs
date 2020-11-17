@@ -21,6 +21,8 @@ struct SliderView<Page: View>: View {
                     print(currentPage)
                     print("total pages: \(self.viewControllers.count)")
                 })
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
             PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
                 .padding(.bottom, 20)
             
