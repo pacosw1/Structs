@@ -726,7 +726,7 @@
           {
             "id": 4,
             "text": "",
-            "animation": "IMAGE of simple linked list",
+            "animation": "simple_linked_list",
             "completed": false,
             "isAnimated": false,
             "duration": 0
@@ -742,7 +742,7 @@
           {
             "id": 6,
             "text": "Como te podrás imaginar, una lista encadenada vacía consiste únicamente de esta 'head' con una referencia a nulo.",
-            "animation": "IMAGE of empty linked list",
+            "animation": "empty_linked_list",
             "completed": false,
             "isAnimated": false,
             "duration": 0
@@ -773,7 +773,7 @@
           {
             "id": 3,
             "text": "La 'lista doblemente encadenada' además de tener el dato del nodo y el apuntador al siguiente nodo tiene un apuntador al nodo anterior.",
-            "animation": "IMAGE of doubly linked list",
+            "animation": "doubly_linked_list",
             "completed": false,
             "isAnimated": false,
             "duration": 0
@@ -781,15 +781,7 @@
           {
             "id": 4,
             "text": "La 'lista encadenada circular', como te podrás imaginar, solo tiene una diferencia con la lista simple. Esta es que el último elemento de la lista no apunta a nulo si no al primer elemento de la lista (el 'head').",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 5,
-            "text": "",
-            "animation": "IMAGE of circular linked list",
+            "animation": "circular_linked_list",
             "completed": false,
             "isAnimated": false,
             "duration": 0
@@ -907,10 +899,10 @@
           {
             "id": 4,
             "text": "",
-            "animation": "ANIMATION of prepend",
+            "animation": "ll_prepend",
             "completed": false,
             "isAnimated": true,
-            "duration": 0
+            "duration": 6
           },
           {
             "id": 5,
@@ -986,10 +978,10 @@
           {
             "id": 6,
             "text": "",
-            "animation": "ANIMATION of deleteHead",
+            "animation": "ll_deleteHead",
             "completed": false,
             "isAnimated": true,
-            "duration": 0
+            "duration": 6
           },
           {
             "id": 7,
