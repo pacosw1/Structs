@@ -52,6 +52,19 @@ struct LessonView: View {
         }
     }
     
+    func getCurrentFlashcard() {
+        
+        let numOfFlashcards = data.flashcards.count
+        
+        while(currentPage < numOfFlashcards && data.flashcards[currentPage].completed) {
+                currentPage = currentPage + 1
+        }
+        
+        if currentPage > 0 {
+            currentPage = currentPage - 1
+        }
+    }
+    
     var body: some View {
         
         VStack {
@@ -64,7 +77,9 @@ struct LessonView: View {
                 
                 SliderView(views:
                             data.flashcards.map { card in
+                                //if(!card.completed) {
                                 FlashCard(text: card.text, namespace: card.animation, duration: card.duration)
+                                // } 
                             }, current: $currentPage
                 )
                 
@@ -97,6 +112,8 @@ struct LessonView: View {
         }
         // .navigationBarTitle(Text(data.name))
         .onAppear(perform: {
+            // Get flashcard that user completed
+            getCurrentFlashcard()
             // Mark first page as completed
             structData[structIndex].topics[topicIndex].flashcards[0].completed = true
             writeJSON(structs: &structData, structIndex: structIndex, topicIndex: topicIndex)

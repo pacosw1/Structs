@@ -4,14 +4,14 @@ struct SliderView<Page: View>: View {
     
     @State var viewControllers: [UIHostingController<Page>]
     
-     @Binding var currentPage: Int
-
+    @Binding var currentPage: Int
+    
     public init(views: [Page], current: Binding<Int>) {
         self._viewControllers = State(initialValue: views.map { UIHostingController(rootView: $0) })
         self._currentPage = current
         print("'rerender'")
     }
-
+    
     var body: some View {
         VStack {
             
@@ -23,7 +23,7 @@ struct SliderView<Page: View>: View {
                 })
             PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
                 .padding(.bottom, 20)
-                
+            
         }
         .onAppear() {
             print("hello")
