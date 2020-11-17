@@ -10,6 +10,8 @@ import SwiftUI
 
 struct CourseHome: View {
     
+    // @State var showDetail: Bool = false
+    
     @Binding var data: Struct
     var structIndex: Int
     
@@ -29,7 +31,6 @@ struct CourseHome: View {
                     .disabled(i == 0 ? false : !data.topics[i-1].completed)
                 }
             }
-            // .navigationBarTitle(Text("Structs"))
             .onAppear(perform: {
                 self.data = loadJSON("data.json")[structIndex]
             })

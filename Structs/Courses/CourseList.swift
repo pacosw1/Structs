@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CourseList: View {
     
-    @State var structs : [Struct]
+    @State var structs: [Struct]
     
     var body: some View {
         
