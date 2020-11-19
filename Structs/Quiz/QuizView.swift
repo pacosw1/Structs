@@ -18,10 +18,11 @@ class UserAnswers: ObservableObject {
 }
 
 struct QuizView: View {
-    
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+
     
     var quiz: Quiz
-    
+
     @ObservedObject var userData = UserAnswers()
     @State var progress: Float = 0.0
     @State var isPresented: Bool = false
@@ -217,10 +218,15 @@ struct QuestionView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            Image(question.image)
-                .resizable()
-                .frame(width: .infinity, height: 200, alignment: .center)
-                .padding(.vertical, 10)
+            
+            
+            if question.image != "" {
+                Image(question.image)
+                    .resizable()
+                    .frame(width: .infinity, height: 200, alignment: .center)
+                    .padding(.vertical, 10)
+            }
+                
             
             
             QuestionHeader(question: question.question)
@@ -228,7 +234,7 @@ struct QuestionView: View {
 //                .padding(.vertical, 30)
             
         }
-        .frame(width: .infinity, height: 300)
+        .frame(minHeight: question.image == "" ? 250 : 500)
         
         .padding(.vertical,20)
     }
