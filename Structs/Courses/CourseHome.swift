@@ -44,7 +44,7 @@ struct CourseHome: View {
 
 
 
-struct QuizTab: View {
+struct ExerciseTab: View {
     
     var open: Bool
     var quiz: Quiz
@@ -62,6 +62,28 @@ struct QuizTab: View {
                 
             }
         }.disabled(!open)
+    }
+}
+
+
+struct QuizTab: View {
+    
+    var open: Bool
+    var quiz: Quiz
+    
+    var body: some View {
+        
+        NavigationLink(destination: QuizView(quiz: quiz)) {
+            
+            VStack {
+                HStack {
+                    Text("Examen Final").fontWeight(.light).font(.system(size: 20)).padding(8)
+                    Spacer()
+                    Image(systemName: open ? "lock.open" : "lock")
+                }
+                
+            }
+        }.disabled(false)
     }
 }
 
