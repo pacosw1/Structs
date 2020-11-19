@@ -22,6 +22,7 @@ struct CourseList: View {
                         CourseRow(data: $structs[i], structIndex: i)
                     }
                 }
+                
             }
             .navigationBarTitle(Text("STRUCTS"))
             .onAppear(perform: {
@@ -33,10 +34,13 @@ struct CourseList: View {
 }
 
 
+
+
+
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseList(structs: structData)
-        
+      CourseList(structs: structData)
     }
 }
+
 

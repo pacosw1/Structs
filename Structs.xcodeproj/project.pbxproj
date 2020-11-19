@@ -15,6 +15,7 @@
 		C45C0CD42559EDC400996665 /* CourseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C0CD32559EDC400996665 /* CourseRow.swift */; };
 		C45C0CD72559F9D800996665 /* CourseHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C0CD62559F9D800996665 /* CourseHome.swift */; };
 		C45C0CE1255A0C0E00996665 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C0CE0255A0C0E00996665 /* LessonView.swift */; };
+		C493D3682566254200AA83E0 /* ScoreModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493D3672566254200AA83E0 /* ScoreModal.swift */; };
 		C4A2CEAC2559E39600D94A2E /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A2CEAB2559E39600D94A2E /* CourseList.swift */; };
 		C4CE5639255CDE7400C23869 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CE5638255CDE7400C23869 /* QuizView.swift */; };
 		C4CE563D255D97F300C23869 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CE563C255D97F300C23869 /* RadioButtonView.swift */; };
@@ -41,6 +42,7 @@
 		C45C0CD32559EDC400996665 /* CourseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRow.swift; sourceTree = "<group>"; };
 		C45C0CD62559F9D800996665 /* CourseHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHome.swift; sourceTree = "<group>"; };
 		C45C0CE0255A0C0E00996665 /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
+		C493D3672566254200AA83E0 /* ScoreModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModal.swift; sourceTree = "<group>"; };
 		C4A2CEAB2559E39600D94A2E /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		C4CE5638255CDE7400C23869 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		C4CE563C255D97F300C23869 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,13 @@
 			path = Lesson;
 			sourceTree = "<group>";
 		};
+		C493D36C2566DDD100AA83E0 /* ejercicios */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ejercicios;
+			sourceTree = "<group>";
+		};
 		C4A2CEAA2559E35600D94A2E /* Courses */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +125,7 @@
 			children = (
 				C4CE563C255D97F300C23869 /* RadioButtonView.swift */,
 				C4CE5638255CDE7400C23869 /* QuizView.swift */,
+				C493D3672566254200AA83E0 /* ScoreModal.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -145,6 +155,7 @@
 				DA73A891253B8BDE00E9DD60 /* ViewController.swift */,
 				DA73A893253B8BDE00E9DD60 /* Main.storyboard */,
 				DAF6B451253D3E1C0023D998 /* FileHelper.swift */,
+				C493D36C2566DDD100AA83E0 /* ejercicios */,
 				DAF6B453253D3E1C0023D998 /* data.json */,
 				C4CE5637255CDE5F00C23869 /* Quiz */,
 				DAF6B452253D3E1C0023D998 /* Structs.swift */,
@@ -235,6 +246,7 @@
 				C2F7AA152566D60A00F8643A /* QueueExcerciseView.swift in Sources */,
 				C4CE563D255D97F300C23869 /* RadioButtonView.swift in Sources */,
 				DA8467D92553D8840071DA88 /* PageViewController.swift in Sources */,
+				C493D3682566254200AA83E0 /* ScoreModal.swift in Sources */,
 				DA8467D62553D85C0071DA88 /* PageControl.swift in Sources */,
 				C4CE5639255CDE7400C23869 /* QuizView.swift in Sources */,
 				C42A9EE2255DFCAC002E506B /* ImageAnimated.swift in Sources */,
