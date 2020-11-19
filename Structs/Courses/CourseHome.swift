@@ -10,6 +10,8 @@ import SwiftUI
 
 struct CourseHome: View {
     
+    // @State var showDetail: Bool = false
+    
     @Binding var data: Struct
     var structIndex: Int
     
@@ -29,7 +31,6 @@ struct CourseHome: View {
                     .disabled(i == 0 ? false : !data.topics[i-1].completed)
                 }
             }
-            .navigationBarTitle(Text("Structs"))
             .onAppear(perform: {
                 self.data = loadJSON("data.json")[structIndex]
             })
@@ -45,23 +46,26 @@ struct HomeHeader: View {
     
     var body: some View {
         VStack(alignment: .leading)  {
+            Text(data.lesson)
+                .fontWeight(.light)
+                .font(.system(size: 48))
+                .multilineTextAlignment(.leading)
+                .background(data.lesson == "LA PILA" ? Color.blue : (data.lesson == "LA FILA" ? Color.green : Color.orange))
+                .foregroundColor(.white)
             
             HStack {
                 Spacer()
             }
             
-            //
-            //            Progress(value: data.percentage)
-            //                .offset(x: 0, y: -10)
-            //                .frame(width: 200)
             Text(data.description)
-                .font(.footnote)
+                .fontWeight(.light)
+                .font(.system(size: 16))
             
-            Text("Temas")
+            Text("TEMAS")
+                .fontWeight(.light)
+                .italic()
                 .padding(.top, 20)
-                .font(.footnote)
         }
-        .navigationBarTitle(Text(data.lesson))
         .padding(.horizontal,20)
         .padding(.top, 10)
         .padding(.bottom, 0)
@@ -77,7 +81,7 @@ struct TopicRow: View {
     
     var body: some View {
         HStack {
-            Text(topic.name)
+            Text(topic.name).fontWeight(.light).font(.system(size: 20)).padding(8)
             Spacer()
             
             Image(systemName: topic.completed || topic.id == 1 || prevTopic.completed ? "lock.open" : "lock")

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CourseList: View {
     
-    @State var structs : [Struct]
+    @State var structs: [Struct]
     
     var body: some View {
         
@@ -23,7 +23,7 @@ struct CourseList: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("Structs"))
+            .navigationBarTitle(Text("STRUCTS"))
             .onAppear(perform: {
                 structData = loadJSON("data.json")
             })
