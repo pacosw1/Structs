@@ -78,9 +78,11 @@ struct RowHeader: View {
             Text(title)
                 .fontWeight(.light)
                 .font(.system(size: 22))
-                .padding(5)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 10)
                 .background(title == "LA PILA" ? Color.blue : (title == "LA FILA" ? Color.green : Color.orange))
                 .foregroundColor(.white)
+                .cornerRadius(3)
             Spacer()
             Text(level).italic().fontWeight(.light).font(.system(size: 14))
         }

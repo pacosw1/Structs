@@ -85,8 +85,11 @@ struct HomeHeader: View {
                 .fontWeight(.light)
                 .font(.system(size: 48))
                 .multilineTextAlignment(.leading)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 10)
                 .background(data.lesson == "LA PILA" ? Color.blue : (data.lesson == "LA FILA" ? Color.green : Color.orange))
                 .foregroundColor(.white)
+                .cornerRadius(3)
             
             HStack {
                 Spacer()
