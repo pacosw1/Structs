@@ -46,17 +46,9 @@
           {
             "id": 2,
             "text": "El orden LIFO quiere decir que todas las operaciones ocurren de un mismo lado. Como veíamos el ejemplo de los platos, si queremos agregar otro plato a la pila lo tenemos que hacer por arriba. Y si queremos sacar uno también lo hacemos por arriba.",
-            "animation": "",
-            "completed": false,
-            "isAnimated": false,
-            "duration": 0
-          },
-          {
-            "id": 3,
-            "text": "",
             "animation": "plates",
             "completed": false,
-            "isAnimated": true,
+            "isAnimated": false,
             "duration": 4
           }
         ]

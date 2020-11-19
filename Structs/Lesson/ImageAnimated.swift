@@ -28,7 +28,7 @@ struct ImageAnimated: UIViewRepresentable {
             newWidth = newHeight/height * width
         }
         print(newWidth, newHeight)
-        let containerView = UIView(frame: CGRect(x: 0, y: 0 , width: newWidth * 0.8, height: newHeight * 0.8))
+        let containerView = UIView(frame: CGRect(x: 0, y: 0 , width: newWidth * 0.9, height: newHeight * 0.9))
 
         let animationImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newWidth * 0.8, height: newHeight * 0.8))
 
