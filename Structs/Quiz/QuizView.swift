@@ -22,6 +22,7 @@ struct QuizView: View {
 
     
     var quiz: Quiz
+    var structIndex: Int
 
     @ObservedObject var userData = UserAnswers()
     @State var progress: Float = 0.0
@@ -75,9 +76,8 @@ struct QuizView: View {
         self.isPresented = false
         mode.wrappedValue.dismiss()
         
-        
-        
-        
+        structData[structIndex].quiz.completed = true
+        writeJSON(structs: &structData, structIndex: structIndex, topicIndex: structIndex)
         
     }
     
@@ -267,7 +267,7 @@ struct QuestionHeader: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView(quiz: structData[2].quiz)
+        QuizView(quiz: structData[2].quiz, structIndex: 0)
     }
 }
 
@@ -279,7 +279,7 @@ struct QuizHeader: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            Text("Quiz")
+            Text("QUIZ")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                

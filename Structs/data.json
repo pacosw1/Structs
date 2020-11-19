@@ -282,7 +282,7 @@
           "id": 3,
           "question": "Un ejemplo de una pila es",
           "image": "",
-          "correct_answer": 1,
+          "correct_answer": 2,
           "answers": [
             {
               "id": 1,
@@ -668,7 +668,7 @@
           "id": 3,
           "question": "La línea que hace falta en la función es",
           "image": "queue_enqueue_question",
-          "correct_answer": 1,
+          "correct_answer": 2,
           "answers": [
             {
               "id": 1,

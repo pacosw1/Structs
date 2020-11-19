@@ -67,7 +67,8 @@ struct QuizAction: View {
     
     var body: some View {
         
-        Text(passed ? "Felicidades, has completado este curso!" : "Intentalo de Nuevo")
+        Text(passed ? "Felicidades, has completado este curso!" : "Intentalo de nuevo")
+            .fontWeight(.light).font(.system(size: 24))
             .padding(.bottom, 30)
             .font(.headline)
         

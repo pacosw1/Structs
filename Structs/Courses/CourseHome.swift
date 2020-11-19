@@ -40,7 +40,7 @@ struct CourseHome: View {
                     }
                 }
                 
-                QuizTab(open: data.topics[data.topics.count-1].completed, quiz: data.quiz)
+                QuizTab(open: data.topics[data.topics.count-1].completed, quiz: data.quiz, structIndex: structIndex)
                 
             }
             .onAppear(perform: {
@@ -51,37 +51,15 @@ struct CourseHome: View {
 }
 
 
-
-struct ExerciseTab: View {
-    
-    var open: Bool
-    var quiz: Quiz
-    
-    var body: some View {
-        
-        NavigationLink(destination: QuizView(quiz: quiz)) {
-            
-            VStack {
-                HStack {
-                    Text("Ejercicio Final").fontWeight(.light).font(.system(size: 20)).padding(8)
-                    Spacer()
-                    Image(systemName: open ? "lock.open" : "lock")
-                }
-                
-            }
-        }.disabled(!open)
-    }
-}
-
-
 struct QuizTab: View {
     
     var open: Bool
     var quiz: Quiz
+    var structIndex: Int
     
     var body: some View {
         
-        NavigationLink(destination: QuizView(quiz: quiz)) {
+        NavigationLink(destination: QuizView(quiz: quiz, structIndex: structIndex)) {
             
             VStack {
                 HStack {
@@ -91,7 +69,7 @@ struct QuizTab: View {
                 }
                 
             }
-        }.disabled(false)
+        }.disabled(!open)
     }
 }
 

@@ -21,7 +21,7 @@ struct Struct: Codable, Identifiable {
     var description, level: String
     var completed: Bool
     var topics: [Topic]
-    let quiz: Quiz
+    var quiz: Quiz
     var excercise: Excercise
 }
 
