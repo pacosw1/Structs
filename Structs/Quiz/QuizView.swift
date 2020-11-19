@@ -11,6 +11,10 @@ import SwiftUI
 
 class UserAnswers: ObservableObject {
     var answers: [Int] = Array(repeating: -1, count: 5)
+    
+    func  reset(len: Int) -> [Int] {
+        return Array(repeating: -1, count: len)
+    }
 }
 
 struct QuizView: View {
@@ -46,7 +50,7 @@ struct QuizView: View {
                 }
                 .disabled(progress < 1)
                 .sheet(isPresented: $isPresented) {
-                    ScoreModal(Score: computeScore(), modalShown: true)
+                    ScoreModal(Score: computeScore(), reset: resetQuiz)
                 }
                 
             }
@@ -55,6 +59,19 @@ struct QuizView: View {
     
         
     
+    }
+    
+    
+    func resetQuiz() -> Void {
+        
+        self.isPresented = false
+        
+    }
+    
+    
+    func finishCourse() -> Void {
+        
+        //todo, mark quiz as completed, and return to main menu
     }
     
     

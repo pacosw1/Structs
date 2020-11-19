@@ -11,7 +11,7 @@ import SwiftUI
 struct ScoreModal: View {
     
     var Score: Int
-    var modalShown: Bool
+    var reset: () -> Void
     
     var body: some View {
         
@@ -34,7 +34,7 @@ struct ScoreModal: View {
             }
             
             
-            QuizAction(passed: Score >= 70)
+            QuizAction(passed: Score >= 70, reset: reset)
             Spacer()
         }
         .padding(.top, 45)
@@ -61,14 +61,18 @@ struct ScoreModal: View {
 struct QuizAction: View {
     
     var passed: Bool
+    var reset: () -> Void
     
     var body: some View {
         
         Text(passed ? "Felicidades, has completado este curso!" : "Intentalo de Nuevo")
             .padding(.bottom, 30)
             .font(.headline)
+        
         Button(action: {
-            
+            if !passed {
+                reset()
+            }
         }) {
             
             Text(passed ? "Regresar a Lecciones": "Volver a Intentar")
@@ -78,12 +82,14 @@ struct QuizAction: View {
                 .background(Color.blue)
                 .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
         }
+            
+        
         
     }
 }
 
-struct ScoreModal_Previews: PreviewProvider {
-    static var previews: some View {
-        ScoreModal(Score: 90, modalShown: true)
-    }
-}
+//struct ScoreModal_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScoreModal(Score: 90, modalShown: true)
+//    }
+//}

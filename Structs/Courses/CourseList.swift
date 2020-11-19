@@ -39,7 +39,7 @@ struct CourseList: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        TestContainer(structs: structData)
+      CourseList(structs: structData)
     }
 }
 
