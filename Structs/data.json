@@ -1105,9 +1105,9 @@
         },
         {
           "id": 3,
-          "question": "Los tres atributos o propiedades de la lista encadenada son",
+          "question": "Los atributos o propiedades de la lista encadenada son",
           "image": "",
-          "correct_answer": 1,
+          "correct_answer": 3,
           "answers": [
             {
               "id": 1,

@@ -63,7 +63,7 @@ struct QuizTab: View {
             
             VStack {
                 HStack {
-                    Text("Examen Final").fontWeight(.light).font(.system(size: 20)).padding(8)
+                    Text("Quiz").fontWeight(.light).font(.system(size: 20)).padding(8)
                     Spacer()
                     Image(systemName: open ? "lock.open" : "lock")
                 }
