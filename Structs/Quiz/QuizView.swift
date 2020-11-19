@@ -8,27 +8,49 @@
 
 import SwiftUI
 
+
+class UserAnswers: ObservableObject {
+    var answers: [Int] = Array(repeating: -1, count: 5)
+    
+    func  reset(len: Int) -> [Int] {
+        return Array(repeating: -1, count: len)
+    }
+}
+
 struct QuizView: View {
+    
+    
+    var quiz: Quiz
+    
+    @ObservedObject var userData = UserAnswers()
+    @State var progress: Float = 0.0
+    @State var isPresented: Bool = false
+    
     var body: some View {
         
         VStack(alignment:.leading) {
-            QuizHeader(progress: 0.4)
+            QuizHeader(progress: $progress)
             Spacer()
-            QuizBody()
+            QuizBody(questions: quiz.questions, updateAnswer: updateAnswer, completed: completed)
             Spacer()
             HStack {
             
-                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {
+                    self.isPresented = true
+                }) {
                     Spacer()
                     Text("Entregar")
                     .accentColor(Color.white)
                     .font(.headline)
                         .frame(maxWidth: .infinity, maxHeight: 50)
-                        .background(Color.blue)
+                        .background(progress < 1 ? Color.blue.opacity(0.3) : Color.blue)
                         .padding(.vertical, 10)
-                        
                         .cornerRadius(15)
                     Spacer()
+                }
+                .disabled(progress < 1)
+                .sheet(isPresented: $isPresented) {
+                    ScoreModal(Score: computeScore(), reset: resetQuiz)
                 }
                 
             }
@@ -38,16 +60,88 @@ struct QuizView: View {
         
     
     }
+    
+    
+    func resetQuiz() -> Void {
+        
+        self.isPresented = false
+        
+    }
+    
+    
+    func finishCourse() -> Void {
+        
+        //todo, mark quiz as completed, and return to main menu
+    }
+    
+    
+    
+    func computeScore() -> Int {
+        
+        var correct: Int = 0
+        
+        for i in 0..<self.quiz.questions.count {
+            
+            let userAnswer = self.userData.answers[i]
+            
+            let correctAnswer = self.quiz.questions[i].correct_answer - 1
+            
+            if (correctAnswer == userAnswer) {
+                correct += 1
+            }
+            
+        }
+        
+        let res = Float(correct) / Float(self.quiz.questions.count)
+        
+        return Int(res * 100.0)
+        
+    }
+    
+    
+    
+    func updateAnswer(questionID: Int, selectedAnswer: Int) {
+        self.userData.answers[questionID] = selectedAnswer
+        print(self.userData.answers)
+    }
+    
+    func completed() {
+        
+        var answered: Int = 0
+       
+        for answer in self.userData.answers {
+            
+            if answer != -1 {
+                answered += 1
+            }
+        }
+        
+        let res = Float(answered) / Float(self.quiz.questions.count)
+        
+        self.progress = res
+        
+        print(res)
+        
+    }
 }
 
 
 struct QuizBody: View {
+    
+    var questions: [Question]
+    var updateAnswer: (Int, Int) -> Void
+    var completed: () -> Void
+    
     var body: some View {
+            
+            List {
+                ForEach(0..<questions.count) {
+                    i in
+                  
+                    QuestionView(updateAnswer: updateAnswer, question: questions[i], completed: completed)
+                }
+            }
         
-        
-        ScrollView {
-            QuestionView()
-        }
         
         .padding(.vertical, 10)
         .padding(.horizontal, 20)
@@ -58,22 +152,54 @@ struct QuizBody: View {
 
 struct QuestionOptions: View {
     
+    var updateAnswer: (Int, Int) -> Void
+    var options: [Answer]
+    var questionID: Int
+    
+    
     @State var selected: Int
+    
+    var completed: () -> Void
     
     var body: some View {
         
-        RadioButtonField(id: 0, label: "Hest", selected: isSelected(id: 0), setAnswer: setAnswer)
-        RadioButtonField(id: 1, label: "Hest", selected: isSelected(id: 1), setAnswer: setAnswer)
-        RadioButtonField(id: 2, label: "Hest", selected: isSelected(id: 2), setAnswer: setAnswer)
-        RadioButtonField(id: 3, label: "Hest", selected: isSelected(id: 3), setAnswer: setAnswer)
-    
+        
+        if #available(iOS 14.0, *) {
+            List {
+                ForEach(0..<options.count) {
+                    i in
+                    renderOption(id: i+1)
+                }
+            }.listStyle(DefaultListStyle())
+            
+        } else {
+            List {
+                ForEach(0..<options.count) {
+                    i in
+                    renderOption(id: i+1)
+                }
+            }
+        }
+        
+        
+        
     
     }
+    
     func isSelected(id:Int) -> Bool {
         return id == selected
     }
     func setAnswer(id: Int) {
+        updateAnswer(questionID-1, id)
         selected = id
+        self.completed()
+    }
+    
+    func renderOption(id: Int) -> RadioButtonField {
+        
+        let option = options[id-1]
+        
+        return RadioButtonField(id: id-1, label: option.answer, selected: isSelected(id: id-1), setAnswer: setAnswer)
     }
 
 }
@@ -82,13 +208,21 @@ struct QuestionOptions: View {
 
 
 struct QuestionView: View {
+    var updateAnswer: (Int, Int) -> Void
+
+    var question: Question
+    
+    var completed: () -> Void
+    
     var body: some View {
         
         VStack(alignment: .leading) {
-            QuestionHeader(question: "What is a stack?")
-            QuestionOptions(selected: -1)
+            QuestionHeader(question: question.question)
+            QuestionOptions(updateAnswer: updateAnswer, options: question.answers, questionID: question.id, selected: -1, completed: completed)
+//                .padding(.vertical, 30)
             
         }
+        .frame(minHeight: 200)
         .padding(.vertical,20)
     }
 }
@@ -114,14 +248,14 @@ struct QuestionHeader: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView()
+        QuizView(quiz: structData[2].quiz)
     }
 }
 
 
 struct QuizHeader: View {
     
-    var progress: Float
+    @Binding var progress: Float
     
     var body: some View {
         
