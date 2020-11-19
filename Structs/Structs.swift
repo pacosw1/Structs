@@ -22,6 +22,7 @@ struct Struct: Codable, Identifiable {
     var completed: Bool
     var topics: [Topic]
     let quiz: Quiz
+    var excercise: Excercise
 }
 
 // MARK: - Quiz
@@ -62,4 +63,10 @@ struct Flashcard: Hashable, Codable, Identifiable {
     var completed: Bool
     var isAnimated: Bool
     var duration: Int
+}
+
+struct Excercise: Codable, Identifiable {
+    var id: Int
+    var name: String
+    var completed: Bool
 }
