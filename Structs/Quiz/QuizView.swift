@@ -9,12 +9,19 @@
 import SwiftUI
 
 struct QuizView: View {
+    
+    
+    var quiz: Quiz
+    
+    @State var userAnswers: [Int] = Array(repeating: -1, count: 5)
+    
+    
     var body: some View {
         
         VStack(alignment:.leading) {
-            QuizHeader(progress: 0.4)
+            QuizHeader(progress: progressAmount())
             Spacer()
-            QuizBody()
+            QuizBody(questions: quiz.questions, updateAnswer: updateAnswer)
             Spacer()
             HStack {
             
@@ -30,6 +37,7 @@ struct QuizView: View {
                         .cornerRadius(15)
                     Spacer()
                 }
+                .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 
             }
             .padding(.horizontal, 15)
@@ -38,16 +46,46 @@ struct QuizView: View {
         
     
     }
+    
+    
+    func updateAnswer(questionID: Int, selectedAnswer: Int) {
+        self.userAnswers[questionID] = selectedAnswer
+        print(self.userAnswers)
+    }
+    
+    func progressAmount() -> Float {
+        
+        var answered: Int = 0
+        let total = (self.userAnswers.count)
+       
+        for answer in self.userAnswers {
+            
+            if answer != -1 {
+                answered += 1
+            }
+        }
+        
+        return Float(answered / total)
+        
+    }
 }
 
 
 struct QuizBody: View {
+    
+    var questions: [Question]
+    var updateAnswer: (Int, Int) -> Void
+    
     var body: some View {
+            
+            List {
+                ForEach(0..<questions.count) {
+                    i in
+                  
+                    QuestionView(updateAnswer: updateAnswer, question: questions[i])
+                }
+            }
         
-        
-        ScrollView {
-            QuestionView()
-        }
         
         .padding(.vertical, 10)
         .padding(.horizontal, 20)
@@ -58,22 +96,50 @@ struct QuizBody: View {
 
 struct QuestionOptions: View {
     
+    var updateAnswer: (Int, Int) -> Void
+    var options: [Answer]
+    var questionID: Int
+    
     @State var selected: Int
     
     var body: some View {
         
-        RadioButtonField(id: 0, label: "Hest", selected: isSelected(id: 0), setAnswer: setAnswer)
-        RadioButtonField(id: 1, label: "Hest", selected: isSelected(id: 1), setAnswer: setAnswer)
-        RadioButtonField(id: 2, label: "Hest", selected: isSelected(id: 2), setAnswer: setAnswer)
-        RadioButtonField(id: 3, label: "Hest", selected: isSelected(id: 3), setAnswer: setAnswer)
-    
+        
+        if #available(iOS 14.0, *) {
+            List {
+                ForEach(0..<options.count) {
+                    i in
+                    renderOption(id: i+1)
+                }
+            }.listStyle(DefaultListStyle())
+            
+        } else {
+            List {
+                ForEach(0..<options.count) {
+                    i in
+                    renderOption(id: i+1)
+                }
+            }
+        }
+        
+        
+        
     
     }
+    
     func isSelected(id:Int) -> Bool {
         return id == selected
     }
     func setAnswer(id: Int) {
+        updateAnswer(questionID, id)
         selected = id
+    }
+    
+    func renderOption(id: Int) -> RadioButtonField {
+        
+        let option = options[id-1]
+        
+        return RadioButtonField(id: id-1, label: option.answer, selected: isSelected(id: id-1), setAnswer: setAnswer)
     }
 
 }
@@ -82,13 +148,19 @@ struct QuestionOptions: View {
 
 
 struct QuestionView: View {
+    var updateAnswer: (Int, Int) -> Void
+
+    var question: Question
+    
     var body: some View {
         
         VStack(alignment: .leading) {
-            QuestionHeader(question: "What is a stack?")
-            QuestionOptions(selected: -1)
+            QuestionHeader(question: question.question)
+            QuestionOptions(updateAnswer: updateAnswer, options: question.answers, questionID: question.id, selected: -1)
+                .padding(.vertical, 30)
             
         }
+        .frame(minHeight: 200)
         .padding(.vertical,20)
     }
 }
@@ -114,7 +186,7 @@ struct QuestionHeader: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView()
+        QuizView(quiz: structData[2].quiz)
     }
 }
 

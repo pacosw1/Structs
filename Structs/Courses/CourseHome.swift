@@ -30,11 +30,38 @@ struct CourseHome: View {
                     }
                     .disabled(i == 0 ? false : !data.topics[i-1].completed)
                 }
+                
+                QuizTab(open: data.topics[data.topics.count-1].completed, quiz: data.quiz)
+                
+                
             }
             .onAppear(perform: {
                 self.data = loadJSON("data.json")[structIndex]
             })
         }
+    }
+}
+
+
+
+struct QuizTab: View {
+    
+    var open: Bool
+    var quiz: Quiz
+    
+    var body: some View {
+        
+        NavigationLink(destination: QuizView(quiz: quiz)) {
+            
+            VStack {
+                HStack {
+                    Text("Examen Final").fontWeight(.light).font(.system(size: 20)).padding(8)
+                    Spacer()
+                    Image(systemName: open ? "lock.open" : "lock")
+                }
+                
+            }
+        }.disabled(!open)
     }
 }
 
@@ -89,10 +116,29 @@ struct TopicRow: View {
         }
     }
 }
+struct TestContainer: View {
+    
+    @State var structs: [Struct]
+    
+    var body: some View {
+        
+        
+        VStack {
+            CourseHome(data: $structs[0], structIndex: 0)
+        }
+        
 
-//struct CourseHome_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CourseHome(data: structData[0], structIndex: 0)
-//    }
-//}
+            .onAppear(perform: {
+                structData = loadJSON("data.json")
+            })
+        
+    }
+}
 
+
+struct CourseHome_Previews: PreviewProvider {
+    static var previews: some View {
+        TestContainer(structs: structData)
+
+    }
+}
