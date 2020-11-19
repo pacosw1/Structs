@@ -91,7 +91,7 @@ struct QuizTab: View {
                 }
                 
             }
-        }.disabled(false)
+        }.disabled(!open)
     }
 }
 
