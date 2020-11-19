@@ -23,7 +23,7 @@ struct QueueExcerciseView: View {
         
         VStack {
             Text("FILA").bold().font(Font.system(size: 30, design: .default)).padding()
-            Text("Usa este pequeña animacion dinamica para comprender el concepto de una fila.").font(Font.system(size: 24, design: .default)).padding()
+            Text("Usa este pequeña animación dinámica para comprender el concepto de una fila.").fontWeight(.light).font(.system(size: 24)).padding()
             Text("queue.size = " + String(count))
             Text("Action:").bold()
             Text(clickedAction)

@@ -209,13 +209,7 @@ struct LinkedListView: View {
                     
                     
                 }
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Text("TERMINAR")
-                        .fontWeight(.light)
-                        .accentColor(Color.white)
-                        .padding()
-                }).background(Color.blue).padding()
+    
                 Spacer()
             }
         }

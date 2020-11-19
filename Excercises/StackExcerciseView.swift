@@ -23,7 +23,7 @@ struct StackExcerciseView: View {
 
         VStack {
             Text("PILA").bold().font(Font.system(size: 30, design: .default)).padding()
-            Text("Usa este pequeña animacion dinamica para comprender el concepto de una pila.").font(Font.system(size: 24, design: .default)).padding()
+            Text("Usa este pequeña animación dinámica para comprender el concepto de una pila.").fontWeight(.light).font(.system(size: 24)).padding()
 
             HStack {
                 VStack {
