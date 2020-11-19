@@ -12,6 +12,7 @@ struct ScoreModal: View {
     
     var Score: Int
     var reset: () -> Void
+    var finish: () -> Void
     
     var body: some View {
         
@@ -34,7 +35,7 @@ struct ScoreModal: View {
             }
             
             
-            QuizAction(passed: Score >= 70, reset: reset)
+            QuizAction(passed: Score >= 70, reset: reset, finish: finish)
             Spacer()
         }
         .padding(.top, 45)
@@ -62,6 +63,7 @@ struct QuizAction: View {
     
     var passed: Bool
     var reset: () -> Void
+    var finish: () -> Void
     
     var body: some View {
         
@@ -72,10 +74,12 @@ struct QuizAction: View {
         Button(action: {
             if !passed {
                 reset()
+            } else {
+                finish()
             }
         }) {
             
-            Text(passed ? "Regresar a Lecciones": "Volver a Intentar")
+            Text(passed ? "Regresar": "Volver a Intentar")
                 .font(.headline)
                 .padding(20)
                 .foregroundColor(Color.white)

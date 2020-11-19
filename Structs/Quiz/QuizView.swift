@@ -51,7 +51,7 @@ struct QuizView: View {
                 }
                 .disabled(progress < 1)
                 .sheet(isPresented: $isPresented) {
-                    ScoreModal(Score: computeScore(), reset: resetQuiz)
+                    ScoreModal(Score: computeScore(), reset: resetQuiz, finish: finishCourse)
                 }
                 
             }
@@ -69,10 +69,16 @@ struct QuizView: View {
         
     }
     
-    
     func finishCourse() -> Void {
         
         //todo, mark quiz as completed, and return to main menu
+        self.isPresented = false
+        mode.wrappedValue.dismiss()
+        
+        
+        
+        
+        
     }
     
     
