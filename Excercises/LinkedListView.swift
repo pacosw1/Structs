@@ -33,7 +33,7 @@ struct LinkedListView: View {
             
             VStack{
                 Text("LISTA ENCADENADA").bold().font(Font.system(size: 30, design: .default)).padding()
-                Text("Acomoda los siguientes elementos en una lista doblemente encadenada en orden alfabético.").fontWeight(.light).font(.system(size: 24)).padding()
+                Text("Acomoda los siguientes elementos en una lista simple encadenada en orden alfabético.").fontWeight(.light).font(.system(size: 24)).padding()
                 
                 HStack {
                     VStack {
