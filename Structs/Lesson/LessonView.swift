@@ -195,3 +195,9 @@ struct AnimationView: View {
         ImageAnimated(animationNamespace: animationNamespace, duration: duration)
     }
 }
+
+struct LessonView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

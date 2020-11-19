@@ -295,6 +295,11 @@
           ]
         }
       ]
+    },
+    "excercise": {
+      "id": 1,
+      "completed": false,
+      "name": "StackExcercise"
     }
   },
   {
@@ -676,6 +681,11 @@
           ]
         }
       ]
+    },
+    "excercise": {
+      "id": 1,
+      "completed": false,
+      "name": "QueueExcercise"
     }
   },
   {
@@ -1114,6 +1124,11 @@
           ]
         }
       ]
+    },
+    "excercise": {
+      "id": 1,
+      "completed": false,
+      "name": "ListaExcercise"
     }
   }
 ]

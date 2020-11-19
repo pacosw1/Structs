@@ -30,6 +30,15 @@ struct CourseHome: View {
                     }
                     .disabled(i == 0 ? false : !data.topics[i-1].completed)
                 }
+                NavigationLink(destination: ExcerciseView(excerciseName: data.excercise.name)) {
+                    HStack {
+                        Text("Ejercicio").fontWeight(.light).font(.system(size: 20)).padding(8)
+                        Spacer()
+                        
+                        Image("lock")
+                        
+                    }
+                }
             }
             .onAppear(perform: {
                 self.data = loadJSON("data.json")[structIndex]
