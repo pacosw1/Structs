@@ -217,12 +217,19 @@ struct QuestionView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
+            Image(question.image)
+                .resizable()
+                .frame(width: .infinity, height: 200, alignment: .center)
+                .padding(.vertical, 10)
+            
+            
             QuestionHeader(question: question.question)
             QuestionOptions(updateAnswer: updateAnswer, options: question.answers, questionID: question.id, selected: -1, completed: completed)
 //                .padding(.vertical, 30)
             
         }
-        .frame(minHeight: 200)
+        .frame(width: .infinity, height: 300)
+        
         .padding(.vertical,20)
     }
 }

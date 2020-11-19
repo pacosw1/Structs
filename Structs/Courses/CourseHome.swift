@@ -31,6 +31,8 @@ struct CourseHome: View {
                     .disabled(i == 0 ? false : !data.topics[i-1].completed)
                 }
                 
+       
+                ExerciseTab(open: data.quiz.completed, quiz: data.quiz)
                 QuizTab(open: data.topics[data.topics.count-1].completed, quiz: data.quiz)
                 
                 
@@ -55,7 +57,7 @@ struct ExerciseTab: View {
             
             VStack {
                 HStack {
-                    Text("Examen Final").fontWeight(.light).font(.system(size: 20)).padding(8)
+                    Text("Ejercicio Final").fontWeight(.light).font(.system(size: 20)).padding(8)
                     Spacer()
                     Image(systemName: open ? "lock.open" : "lock")
                 }
