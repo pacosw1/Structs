@@ -103,13 +103,6 @@
 			path = Lesson;
 			sourceTree = "<group>";
 		};
-		C493D36C2566DDD100AA83E0 /* ejercicios */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ejercicios;
-			sourceTree = "<group>";
-		};
 		C4A2CEAA2559E35600D94A2E /* Courses */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +148,6 @@
 				DA73A891253B8BDE00E9DD60 /* ViewController.swift */,
 				DA73A893253B8BDE00E9DD60 /* Main.storyboard */,
 				DAF6B451253D3E1C0023D998 /* FileHelper.swift */,
-				C493D36C2566DDD100AA83E0 /* ejercicios */,
 				DAF6B453253D3E1C0023D998 /* data.json */,
 				C4CE5637255CDE5F00C23869 /* Quiz */,
 				DAF6B452253D3E1C0023D998 /* Structs.swift */,
@@ -414,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.paco.Structs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -432,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.paco.Structs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
