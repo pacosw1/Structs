@@ -11,7 +11,11 @@ import SwiftUI
 struct ExcerciseView: View {
     
     var excerciseName: String
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
+        ZStack {
         
         if(excerciseName == "StackExcercise") {
             StackExcerciseView()
@@ -22,6 +26,15 @@ struct ExcerciseView: View {
         else {
             LinkedListView()
         }
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+            Image(systemName: "arrow.backward").foregroundColor(Color.gray)
+                Text("TEMAS").fontWeight(.light).accentColor(.gray)
+            }
+        })
     }
 }
 
