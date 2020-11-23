@@ -17,7 +17,7 @@ struct ScoreModal: View {
     var body: some View {
         
         VStack {
-            Text("Calificacion")
+            Text("Calificación")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .foregroundColor(Color.black.opacity(0.7))
             HStack {
