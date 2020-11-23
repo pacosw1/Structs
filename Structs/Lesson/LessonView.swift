@@ -21,7 +21,8 @@ struct LessonView: View {
     @State var width: CGFloat = 0
     @State var height: CGFloat = 0
     
-    // @Binding var showSelf: Bool
+    @Binding var bigTitle: String
+    @Binding var bigTitleColor: Color
     
     func resizeImage(name: String, isAnimated: Bool) -> [CGFloat] {
         if(!isAnimated && name.count > 0) {
@@ -78,7 +79,8 @@ struct LessonView: View {
                 
                 SliderView(views:
                             data.flashcards.map { card in
-                                FlashCard(showSelf: mode, text: card.text, namespace: card.animation, duration: card.duration, flashcardID: card.id, numOfFlashcards: data.flashcards.count, structName: structData[structIndex].lesson)
+                                FlashCard(showSelf: mode, bigTitle: $bigTitle, bigTitleColor: $bigTitleColor, text: card.text, namespace: card.animation, duration: card.duration, flashcardID: card.id, numOfFlashcards: data.flashcards.count, structName: structData[structIndex].lesson)
+                                
                             }, current: $currentPage
                 )
                 
@@ -97,6 +99,8 @@ struct LessonView: View {
         }
         // .navigationBarTitle(Text(data.name))
         .onAppear(perform: {
+            self.bigTitle = structData[structIndex].lesson
+            self.bigTitleColor = structData[structIndex].lesson == "LA PILA" ? Color.blue : (structData[structIndex].lesson == "LA FILA" ? Color.green : Color.orange)
             // Get flashcard that user completed
             getCurrentFlashcard()
             // Mark first page as completed
@@ -114,6 +118,8 @@ struct LessonView: View {
 struct FlashCard: View {
     
     @Binding var showSelf: PresentationMode
+    @Binding var bigTitle: String
+    @Binding var bigTitleColor: Color
     var text: String
     var namespace: String
     var duration: Int
@@ -145,6 +151,8 @@ struct FlashCard: View {
                 HStack {
                     Button(action: {
                         $showSelf.wrappedValue.dismiss()
+                        self.bigTitle = "STRUCTS"
+                        self.bigTitleColor = Color.gray
                     }) {
                         Text("TEMAS")
                             .fontWeight(.light)
@@ -155,6 +163,8 @@ struct FlashCard: View {
                     if(flashcardID == numOfFlashcards) {
                         Button(action: {
                             $showSelf.wrappedValue.dismiss()
+                            self.bigTitle = "STRUCTS"
+                            self.bigTitleColor = Color.gray
                         }) {
                             Text("TERMINAR")
                                 .fontWeight(.light)

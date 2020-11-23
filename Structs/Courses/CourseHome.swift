@@ -10,10 +10,12 @@ import SwiftUI
 
 struct CourseHome: View {
     
-    // @State var showDetail: Bool = false
-    
     @Binding var data: Struct
+    @Binding var bigTitle: String
+    @Binding var bigTitleColor: Color
     var structIndex: Int
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         
@@ -24,10 +26,10 @@ struct CourseHome: View {
                 ForEach(0..<data.topics.count) {
                     i in
                     NavigationLink(
-                        destination: LessonView(data: data.topics[i], structIndex: structIndex, topicIndex: i)) {
+                        destination: LessonView(data: data.topics[i], structIndex: structIndex, topicIndex: i, bigTitle: $bigTitle, bigTitleColor: $bigTitleColor)) {
                         
                         TopicRow(topic: $data.topics[i], prevTopic: i == 0 ? $data.topics[i] : $data.topics[i-1])
-                    }
+                    }.navigationBarHidden(true)
                     .disabled(i == 0 ? false : !data.topics[i-1].completed)
                 }
                 NavigationLink(destination: ExcerciseView(excerciseName: data.excercise.name)) {
@@ -38,11 +40,12 @@ struct CourseHome: View {
                         Image("lock")
                         
                     }
-                }
+                }.navigationBarHidden(true)
                 
                 QuizTab(open: data.topics[data.topics.count-1].completed, quiz: data.quiz, structIndex: structIndex)
                 
             }
+            .navigationBarHidden(true)
             .onAppear(perform: {
                 self.data = loadJSON("data.json")[structIndex]
             })
@@ -78,9 +81,20 @@ struct HomeHeader: View {
     
     @Binding var data: Struct
     var structIndex: Int
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         VStack(alignment: .leading)  {
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image(systemName: "arrow.backward").foregroundColor(Color.gray)
+                    Text("STRUCTS").accentColor(.gray)
+                }
+                
+            }.padding(.top)
+            .padding(.bottom)
             Text(data.lesson)
                 .fontWeight(.light)
                 .font(.system(size: 48))
@@ -127,29 +141,29 @@ struct TopicRow: View {
         }
     }
 }
-struct TestContainer: View {
-    
-    @State var structs: [Struct]
-    
-    var body: some View {
-        
-        
-        VStack {
-            CourseHome(data: $structs[0], structIndex: 0)
-        }
-        
+//struct TestContainer: View {
+//
+//    @State var structs: [Struct]
+//
+//    var body: some View {
+//
+//
+//        VStack {
+//            CourseHome(data: $structs[0], bigTitle: Binding<false>, structIndex: 0)
+//        }
+//
+//
+//            .onAppear(perform: {
+//                structData = loadJSON("data.json")
+//            })
+//
+//    }
+//}
 
-            .onAppear(perform: {
-                structData = loadJSON("data.json")
-            })
-        
-    }
-}
 
-
-struct CourseHome_Previews: PreviewProvider {
-    static var previews: some View {
-        TestContainer(structs: structData)
-
-    }
-}
+//struct CourseHome_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TestContainer(structs: structData)
+//
+//    }
+//}
