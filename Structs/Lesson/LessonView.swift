@@ -158,7 +158,8 @@ struct FlashCard: View {
                             .fontWeight(.light)
                             .accentColor(getStructColor())
                             .padding()
-                    }.border(getStructColor())
+                    }.border(getStructColor(), width: 2.0)
+                    .cornerRadius(3)
                     Spacer()
                     if(flashcardID == numOfFlashcards) {
                         Button(action: {
@@ -171,6 +172,7 @@ struct FlashCard: View {
                                 .accentColor(Color.white)
                                 .padding()
                         }.background(getStructColor())
+                        .cornerRadius(3)
                     } else {
                         // Avoid "TEMAS" button from centering
                         Button(action: {}) {
