@@ -28,6 +28,8 @@ struct QuizView: View {
     @State var progress: Float = 0.0
     @State var isPresented: Bool = false
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         
         VStack(alignment:.leading) {
@@ -57,7 +59,15 @@ struct QuizView: View {
                 
             }
             .padding(.horizontal, 15)
-        }
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+            Image(systemName: "arrow.backward").foregroundColor(Color.gray)
+                Text("TEMAS").fontWeight(.light).accentColor(.gray)
+            }
+        })
     
         
     
