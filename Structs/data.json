@@ -4,7 +4,7 @@
     "lesson": "LA PILA",
     "percentage": 0.0,
     "description": "Una de las estructuras más divertidas y útiles que aprenderás en tu vida como programador.",
-    "level": "Easy",
+    "level": "Fácil",
     "completed": false,
     "topics": [
       {
@@ -307,7 +307,7 @@
     "lesson": "LA FILA",
     "percentage": 0.0,
     "description": "Seguro te gustará esta estructura porque, aunque no lo creas, ya tienes mucha experiencia usándola en tu vida cotidiana.",
-    "level": "Medium",
+    "level": "Normal",
     "completed": false,
     "topics": [
       {
@@ -693,8 +693,8 @@
     "lesson": "LA LISTA ENCADENADA",
     "completed": false,
     "percentage": 0.0,
-    "description": "Prepárate para aprender uno de los temas más difíciles para el estudiante novato, pero sin duda, con de gran utilidad.",
-    "level": "Hard",
+    "description": "Prepárate para aprender uno de los temas más complejos para el estudiante novato, pero sin duda, de gran utilidad.",
+    "level": "Difícil",
     "topics": [
       {
         "id": 1,

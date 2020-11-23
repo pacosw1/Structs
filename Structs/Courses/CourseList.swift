@@ -24,7 +24,13 @@ struct CourseList: View {
                 }
                 
             }
+            .navigationBarItems(trailing: Button(action: {
+                print("Edit button was tapped")
+            }) {
+                Image(systemName: "info.circle.fill").foregroundColor(Color.black)
+            })
             .navigationBarTitle(Text("STRUCTS"))
+            
             .onAppear(perform: {
                 structData = loadJSON("data.json")
             })
