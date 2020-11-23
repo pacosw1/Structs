@@ -230,6 +230,7 @@ struct QuestionView: View {
                 Image(question.image)
                     .resizable()
                     .frame(width: .infinity, height: 200, alignment: .center)
+                    .aspectRatio(contentMode: .fit)
                     .padding(.vertical, 10)
             }
                 
