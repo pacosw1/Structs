@@ -229,7 +229,8 @@ struct QuestionView: View {
             if question.image != "" {
                 Image(question.image)
                     .resizable()
-                    .scaledToFit()
+                    .frame(width: .infinity, height: 200, alignment: .center)
+                    .aspectRatio(contentMode: .fit)
                     .padding(.vertical, 10)
             }
                 
