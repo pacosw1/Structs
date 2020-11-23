@@ -13,12 +13,14 @@ struct CourseList: View {
     @State var structs: [Struct]
     @State var bigTitle: String = "STRUCTS"
     @State var bigTitleColor: Color = Color.gray
+    @State var showCredits: Bool = false
     
     var body: some View {
         
         VStack {
             Button(action: {
                 print("Credits button was tapped")
+                self.showCredits.toggle()
             }) {
                 Image(systemName: "info.circle.fill").foregroundColor(Color.black)
             }.frame(width: UIScreen.main.bounds.width, height: 20, alignment: .trailing).padding(.trailing, 50.0)
@@ -52,6 +54,8 @@ struct CourseList: View {
         }
         .background(Color.white)
         .edgesIgnoringSafeArea(.all)
+        }.sheet(isPresented: $showCredits) {
+            Credits()
         }
         
     }

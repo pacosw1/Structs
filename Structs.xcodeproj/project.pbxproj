@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BEF14C6256B765700D15524 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEF14C5256B765700D15524 /* Credits.swift */; };
 		C2F7AA152566D60A00F8643A /* QueueExcerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7AA142566D60A00F8643A /* QueueExcerciseView.swift */; };
 		C2F7AA192566DA8100F8643A /* ExcerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7AA182566DA8100F8643A /* ExcerciseView.swift */; };
 		C2F7AA1C2566DAD400F8643A /* StackExcerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F7AA1B2566DAD400F8643A /* StackExcerciseView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BEF14C5256B765700D15524 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		C2F7AA142566D60A00F8643A /* QueueExcerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueExcerciseView.swift; sourceTree = "<group>"; };
 		C2F7AA182566DA8100F8643A /* ExcerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseView.swift; sourceTree = "<group>"; };
 		C2F7AA1B2566DAD400F8643A /* StackExcerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExcerciseView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				DA73A898253B8BE300E9DD60 /* LaunchScreen.storyboard */,
 				DA73A89B253B8BE300E9DD60 /* Info.plist */,
 				C45C0CDB255A074000996665 /* SliderView */,
+				5BEF14C5256B765700D15524 /* Credits.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				DA73A890253B8BDE00E9DD60 /* SceneDelegate.swift in Sources */,
 				C45C0CD42559EDC400996665 /* CourseRow.swift in Sources */,
 				C2F7AA192566DA8100F8643A /* ExcerciseView.swift in Sources */,
+				5BEF14C6256B765700D15524 /* Credits.swift in Sources */,
 				C2F7AA1C2566DAD400F8643A /* StackExcerciseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
