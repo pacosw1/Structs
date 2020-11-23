@@ -14,7 +14,7 @@ struct Credits: View {
         VStack {
             Text("CREDITOS").fontWeight(.bold).font(.system(size: 28)).padding()
             Text("STRUCTS fue desarrollado como proyecto final de la materia Proyecto de Desarrollo para dispositivos móviles en el semestre Agosto-Diciembre 2020 por Francisco Sainz, José Antonio Alemán y María Alejandra Pestana.").fontWeight(.light).padding()
-            Text("Imágenes obtenidas de Google.").fontWeight(.light)
+            Text("Imágenes obtenidas de Google y KlipArtz.").fontWeight(.light)
         }
     }
 }
